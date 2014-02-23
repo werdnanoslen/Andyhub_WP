@@ -29,19 +29,22 @@ and Blueprint http://www.blueprintcss.org/
 2.0 - Typography
 3.0 - Elements
 4.0 - Inputs and buttons
-5.0 - Navigation
-	5.1 - Links
-	5.2 - Menus
-6.0 - Accessibility
-7.0 - Alignments
-8.0 - Clearings
-9.0 - Widgets
-10.0 - Content
-	10.1 - Posts and pages
-	10.2 - Asides
-	10.3 - Comments
-11.0 - Infinite scroll
-12.0 - Media
+5.0 - Layout
+    5.1 - Definitions
+    5.2 - Responsive grid
+6.0 - Navigation
+	6.1 - Links
+	6.2 - Menus
+7.0 - Accessibility
+8.0 - Alignments
+9.0 - Clearings
+10.0 - Widgets
+11.0 - Content
+	11.1 - Posts and pages
+	11.2 - Asides
+	11.3 - Comments
+12.0 - Infinite scroll
+13.0 - Media
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -74,7 +77,7 @@ html {
 *,
 *:before,
 *:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 8.0; see http://caniuse.com/#search=box-sizing */
 	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
 	box-sizing:         border-box;
 }
@@ -125,6 +128,9 @@ a img {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
+@font-size: 16;
+@em: @font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
+
 body,
 button,
 input,
@@ -132,7 +138,7 @@ select,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
+	font-size: @font-size;
 	font-size: 1.6rem;
 	line-height: 1.5;
 }
@@ -336,10 +342,105 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-5.0 Navigation
+5.0 Layout (adopted from Frameless <http://framelessgrid.com/>)
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-5.1 Links
+5.1 Definitions
+--------------------------------------------------------------*/
+@column: 48;	// The column-width of your grid in pixels
+@gutter: 24;	// The gutter-width of your grid in pixels
+
+// Widths in variables, in ems
+ @1cols: ( 1 * (@column + @gutter) - @gutter) / @em; @1col: @1cols;
+ @2cols: ( 2 * (@column + @gutter) - @gutter) / @em;
+ @3cols: ( 3 * (@column + @gutter) - @gutter) / @em;
+ @4cols: ( 4 * (@column + @gutter) - @gutter) / @em;
+ @5cols: ( 5 * (@column + @gutter) - @gutter) / @em;
+ @6cols: ( 6 * (@column + @gutter) - @gutter) / @em;
+ @7cols: ( 7 * (@column + @gutter) - @gutter) / @em;
+ @8cols: ( 8 * (@column + @gutter) - @gutter) / @em;
+ @9cols: ( 9 * (@column + @gutter) - @gutter) / @em;
+@10cols: (10 * (@column + @gutter) - @gutter) / @em;
+@11cols: (11 * (@column + @gutter) - @gutter) / @em;
+@12cols: (12 * (@column + @gutter) - @gutter) / @em;
+@13cols: (13 * (@column + @gutter) - @gutter) / @em;
+@14cols: (14 * (@column + @gutter) - @gutter) / @em;
+@15cols: (15 * (@column + @gutter) - @gutter) / @em;
+@16cols: (16 * (@column + @gutter) - @gutter) / @em;
+
+// Widths in a function, in ems
+.width (@cols:1) {
+	width: (@cols * (@column + @gutter) - @gutter) / @em;
+}
+
+/*--------------------------------------------------------------
+5.2 Responsive grid
+--------------------------------------------------------------*/
+/*
+	Mobile layout 
+	240–479 px
+	Zoomed out below 320 px
+*/
+@media screen and (min-width: 15em) {
+	#masthead, #content, #colophon {
+		width: @4cols;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*
+	Wide mobile layout 
+	480-767 px
+	Zoomed in above 480 px
+*/
+@media screen and (min-width: 30em) {
+	#masthead, #content, #colophon {
+		width: @6cols;
+	}
+}
+
+/*
+	Tablet layout 
+	600-911 px
+	Zoomed in above 600 px
+*/
+@media screen and (min-width: 37.5em) {
+	#masthead, #content, #colophon {
+		width: @8cols;
+	}
+}
+
+/*
+	Widescreen layout 
+	912-1887 px
+	Zoomed in above 912 px
+*/
+@media screen and (min-width: 57em) {
+	#masthead, #content, #colophon {
+		width: @12cols;
+	}
+}
+
+/*
+	Huge-screen layout 
+	1888-2520 px
+	Zoomed in above 1920 px
+*/
+@media screen and (min-width: 118em) {
+	#masthead, #content, #colophon {
+		width: @13cols+@13cols+(24/@em);
+		margin-left: auto;
+		margin-right: auto;
+	}
+} 
+
+/*--------------------------------------------------------------
+6.0 Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+6.1 Links
 --------------------------------------------------------------*/
 a {
 	color: royalblue;
@@ -354,13 +455,55 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-5.2 Menus
+6.2 Menus
 --------------------------------------------------------------*/
+.site-header {
+    vertical-align: bottom;
+}
+
+.site-title {
+    display: inline-block;
+}
+
+
+
+#nav {
+	padding: 24/@em 0 0;
+	height: 48/@em;
+	width: @4cols;
+	margin: 0 auto;
+}
+
+	#nav li {
+		list-style: none;
+		display: block;
+		float: left;
+		width: 48/@em;
+		margin-left: 24/@em;
+	}
+
+		#nav li:first-child {
+			margin-left: 0;
+		}
+
+	#nav a {
+		display: block;
+		text-align: center;
+	}
+
+	#nav .icon {
+		font-size: 28/@em;
+		line-height: (48)/28*1em;
+		vertical-align: middle;
+	}
+
+
+
+
 .main-navigation {
 	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	display: inline-block;
+    float: right;
 }
 .main-navigation ul {
 	list-style: none;
@@ -441,7 +584,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-6.0 Accessibility
+7.0 Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers */
 .screen-reader-text {
@@ -471,7 +614,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-7.0 Alignments
+8.0 Alignments
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
@@ -518,7 +661,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-9.0 Widgets
+10.0 Widgets
 --------------------------------------------------------------*/
 .widget {
 	margin: 0 0 1.5em;
@@ -535,10 +678,10 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.0 Content
+11.0 Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-10.1 Posts and pages
+11.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
 }
@@ -564,7 +707,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.2 Asides
+11.2 Asides
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -572,7 +715,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-10.3 Comments
+11.3 Comments
 --------------------------------------------------------------*/
 .comment-content a {
 	word-wrap: break-word;
@@ -581,7 +724,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-11.0 Infinite scroll
+12.0 Infinite scroll
 --------------------------------------------------------------*/
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
@@ -594,7 +737,7 @@ a:active {
 }
 
 /*--------------------------------------------------------------
-12.0 Media
+13.0 Media
 --------------------------------------------------------------*/
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
