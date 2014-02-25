@@ -5,11 +5,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php // Don't display excerpt_image for Search
-        if (!is_search()) {
-            echo get_post_custom_values('excerpt_image')[0];
-        }
-    ?>
+    <?php if (!is_search()) : // Don't display excerpt_image for Search ?>
+        <a href="<?php the_permalink(); ?>" rel="bookmark">
+            <?php echo get_post_custom_values('excerpt_image')[0]; ?>
+        </a>
+    <?php endif; ?>
     
 	<header class="entry-header">
 		<h2 class="entry-title">
@@ -23,16 +23,6 @@
 
 	<footer class="entry-meta">
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-			<?php
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'andyhub_wp' ) );
-				if ( $categories_list && andyhub_wp_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'andyhub_wp' ), $categories_list ); ?>
-			</span>
-			<?php endif; // End if categories ?>
-
 			<?php
 				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', __( ', ', 'andyhub_wp' ) );

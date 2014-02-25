@@ -465,8 +465,17 @@ textarea {
     margin-bottom: 2em;
 }
 
-#masthead, #content, #colophon, article.category-academic, article.category-professional {
+#masthead, #content, #colophon, #primary, article.category-academic, article.category-professional {
     width: 100%;
+}
+
+article.category-academic, article.category-professional {
+    display: inline-block;
+    vertical-align: top;
+}
+
+article.category-academic img, article.category-professional img {
+    max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -502,6 +511,7 @@ a:active {
 	clear: both;
 	display: inline-block;
     text-align: right;
+    margin-left: 1em;
 }
 .main-navigation ul {
 	list-style: none;
@@ -692,6 +702,12 @@ a:active {
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+.entry-content, .entry-summary {
+    margin: 0.5em 0 0;
+}
+.entry-header {
+    margin-top: -5px;
+}
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
@@ -808,7 +824,7 @@ object {
 	Zoomed in above 900 px
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#page, #masthead, #content, #primary, #colophon {
 		width: @12cols;
 	}
     .site-title {
@@ -821,7 +837,11 @@ object {
         width: @2cols;
     }
     article.category-academic, article.category-professional {
+        margin-right: 1em;
         width: @6cols;
+    }
+    article.category-academic:nth-of-type(2n), article.category-professional:nth-of-type(2n) {
+        margin-right: 0;
     }
 }
 
@@ -830,7 +850,7 @@ object {
 	Zoomed in above 1200 px
 */
 @media screen and (min-width: (@16cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#page, #masthead, #content, #primary, #colophon {
 		width: @16cols;
 	}
     .site-title {
@@ -841,15 +861,18 @@ object {
     }
     .main-navigation {
         width: @8cols;
-        margin-left: 1em;
     }
     .main-navigation li {
         width: @2cols;
     }
-    article.category-academic, article.category-professional {
+    article.category-academic, 
+    article.category-professional, 
+    article.category-academic:nth-of-type(2n), 
+    article.category-professional:nth-of-type(2n) {
+        margin-right: 1em;
         width: @4cols;
     }
-    article.category-academic img, article.category-professional img {
-        max-width: 100%;
+    article.category-academic:nth-of-type(4n), article.category-professional:nth-of-type(4n) {
+        margin-right: 0;
     }
 }
