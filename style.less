@@ -465,7 +465,7 @@ textarea {
     margin-bottom: 2em;
 }
 
-#masthead, #content, #colophon {
+#masthead, #content, #colophon, article.category-academic, article.category-professional {
     width: 100%;
 }
 
@@ -820,6 +820,9 @@ object {
     .main-navigation li {
         width: @2cols;
     }
+    article.category-academic, article.category-professional {
+        width: @6cols;
+    }
 }
 
 /*
@@ -842,5 +845,11 @@ object {
     }
     .main-navigation li {
         width: @2cols;
+    }
+    article.category-academic, article.category-professional {
+        width: @4cols;
+    }
+    article.category-academic img, article.category-professional img {
+        max-width: 100%;
     }
 }
