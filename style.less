@@ -836,11 +836,11 @@ object {
     .main-navigation li {
         width: @2cols;
     }
-    article.category-academic, article.category-professional {
+    .category article {
         margin-right: 1em;
         width: @6cols;
     }
-    article.category-academic:nth-of-type(2n), article.category-professional:nth-of-type(2n) {
+    .category article:nth-of-type(2n) {
         margin-right: 0;
     }
 }
@@ -865,14 +865,12 @@ object {
     .main-navigation li {
         width: @2cols;
     }
-    article.category-academic, 
-    article.category-professional, 
-    article.category-academic:nth-of-type(2n), 
-    article.category-professional:nth-of-type(2n) {
+    .category article,
+    .category article:nth-of-type(2n) {
         margin-right: 1em;
         width: @4cols;
     }
-    article.category-academic:nth-of-type(4n), article.category-professional:nth-of-type(4n) {
+    .category article:nth-of-type(4n) {
         margin-right: 0;
     }
 }
