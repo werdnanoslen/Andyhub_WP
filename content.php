@@ -11,11 +11,13 @@
         </a>
     <?php endif; ?>
     
-	<header class="entry-header">
-		<h2 class="entry-title">
-            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-        </h2>
-	</header><!-- .entry-header -->
+    <?php if (!is_home()) : //Don't show title on Home page ?>
+        <header class="entry-header">
+            <h2 class="entry-title">
+                <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+            </h2>
+        </header><!-- .entry-header -->
+    <?php endif; ?>
 
 	<div class="entry-<?php echo (is_search() ? "summary" : "content") ?>">
 		<?php the_excerpt(); ?>
