@@ -11,7 +11,7 @@
         </a>
     <?php endif; ?>
     
-    <?php if (!is_home()) : //Don't show title on Home page ?>
+    <?php if (!is_front_page()) : //Don't show title on Home page ?>
         <header class="entry-header">
             <h2 class="entry-title">
                 <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>

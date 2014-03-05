@@ -5,7 +5,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if (!is_home()) : //Don't show title on Home page ?>
+	<?php if (!is_front_page()) : //Don't show title on Home page ?>
         <header class="entry-header">
             <h1 class="entry-title"><?php the_title(); ?></h1>
         </header><!-- .entry-header -->
