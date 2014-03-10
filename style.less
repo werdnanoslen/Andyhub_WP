@@ -518,7 +518,6 @@ a:active {
 	clear: both;
 	display: inline-block;
     text-align: right;
-    margin-left: 1em;
 }
 .main-navigation ul {
 	list-style: none;
@@ -708,22 +707,21 @@ nav.toggled .menu-main-container li:last-of-type {
 body.home, body.home #page, body.home #content, body.home main {
     height: 100%;
 }
-body.home #page {
+body.home #page, body.home header, body.home #content {
     width: 100%;
 }
-body.home #masthead {
-    padding: 0 5%;
+body.home header {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+    background-color: #fff;
 }
 body.home #content {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 0;
-    width: 100%;
 }
 body.home main {
     background-repeat: none;
@@ -905,12 +903,5 @@ object {
     }
     .category article:nth-of-type(4n) {
         margin-right: 0;
-    }
-    body.home #masthead {
-        padding: 0 5%;
-        width: 100%;
-    }
-    body.home .main-navigation {
-        margin-left: inherit;
     }
 }

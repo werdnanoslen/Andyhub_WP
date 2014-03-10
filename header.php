@@ -21,20 +21,22 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<header id="masthead" class="site-header" role="banner">
-        <div class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <?php bloginfo( 'name' ); ?>
-            </a>
-        </div>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( '&#8803;', 'andyhub_wp' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content">
-                <?php _e( 'Skip to content', 'andyhub_wp' ); ?>
-            </a>
+	<header class="site-header" role="banner">
+        <div id="masthead">
+            <div class="site-title">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <?php bloginfo( 'name' ); ?>
+                </a>
+            </div>
+            <nav id="site-navigation" class="main-navigation" role="navigation">
+                <h1 class="menu-toggle"><?php _e( '&#8803;', 'andyhub_wp' ); ?></h1>
+                <a class="skip-link screen-reader-text" href="#content">
+                    <?php _e( 'Skip to content', 'andyhub_wp' ); ?>
+                </a>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+            </nav><!-- #site-navigation -->
+        </div><!-- #masthead -->
+    </header>
 
 	<div id="content" class="site-content">
