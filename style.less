@@ -459,6 +459,7 @@ textarea {
 #page {
     margin: 0 auto;
     width: 90%;
+    position: relative;
 }
 
 #masthead {
@@ -702,6 +703,44 @@ a:active {
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+html {
+    height: 100%;
+    background-repeat: none;
+    background-size: cover;
+    transition: background-image 1.0s linear;
+}
+body.home, body.home #page, body.home #content, body.home #primary, body.home #primary, body.home main {
+    height: 100%;
+}
+body.home {
+    background: rgb(255, 255, 255) !important;
+    opacity: 0.85;
+    background: linear-gradient(45deg, #9a2323 12%,#242b4b 72%) !important;
+    color: #fff;
+}
+body.home a {
+    color: #fff;
+}
+body.home main article{
+    display: table;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+body.home #masthead {
+    max-height: 20%;
+}
+body.home #content {
+    max-height: 80%;
+}
+body.home nav.toggled .menu-main-container a {
+    color: #000;
+}
+body.home .entry-content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 .entry-content, .entry-summary {
     margin: 0.5em 0 0;
 }
@@ -711,6 +750,20 @@ a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+nav.toggled .menu-main-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+}
+nav.toggled .menu-main-container li {
+    padding: 6px 0px;
+    border-top: 1px solid #ddd;
+}
+nav.toggled .menu-main-container li:last-of-type {
+    border-bottom: 1px solid #ddd;
 }
 
 /*--------------------------------------------------------------
@@ -809,7 +862,6 @@ object {
     .main-navigation {
         clear: none;
         float: right;
-        position: relative;
     }
 	.main-navigation ul {
 		display: none;
