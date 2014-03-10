@@ -40,7 +40,6 @@ and Blueprint http://www.blueprintcss.org/
 11.0 - Content
 	11.1 - Posts and pages
 	11.2 - Asides
-	11.3 - Comments
 12.0 - Infinite scroll
 13.0 - Media
 --------------------------------------------------------------*/
@@ -67,6 +66,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 }
 html {
+    height: 100%;
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
@@ -456,6 +456,11 @@ textarea {
 	width: (@cols * (@column + @gutter) - @gutter) / @em;
 }
 
+#masthead, #content, #colophon, article.category-academic, article.category-professional {
+    width: 100%;
+    margin: 0 auto;
+}
+
 #page {
     margin: 0 auto;
     width: 90%;
@@ -463,19 +468,20 @@ textarea {
 }
 
 #masthead {
-    margin-bottom: 2em;
+    color: #000;
+    background-color: #fff;
 }
 
-#masthead, #content, #colophon, #primary, article.category-academic, article.category-professional {
-    width: 100%;
+#masthead a {
+    color: #000;
 }
 
-article.category-academic, article.category-professional {
+article.category-work, article.category-concepts {
     display: inline-block;
     vertical-align: top;
 }
 
-article.category-academic img, article.category-professional img {
+article.category-work img, article.category-concepts img {
     max-width: 100%;
 }
 
@@ -584,6 +590,20 @@ a:active {
 	text-align: right;
 	width: 50%;
 }
+nav.toggled .menu-main-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+}
+nav.toggled .menu-main-container li {
+    padding: 6px 0px;
+    border-top: 1px solid #ddd;
+}
+nav.toggled .menu-main-container li:last-of-type {
+    border-bottom: 1px solid #ddd;
+}
 
 /*--------------------------------------------------------------
 7.0 Accessibility
@@ -685,64 +705,48 @@ a:active {
 /*--------------------------------------------------------------
 11.1 Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-}
-.hentry {
-	margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
-html {
+body.home, body.home #page, body.home #content, body.home main {
     height: 100%;
+}
+body.home #page {
+    width: 100%;
+}
+body.home #masthead {
+    padding: 0 5%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+body.home #content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+}
+body.home main {
     background-repeat: none;
     background-size: cover;
     transition: background-image 1.0s linear;
 }
-body.home, body.home #page, body.home #content, body.home #primary, body.home #primary, body.home main {
-    height: 100%;
-}
-body.home {
-    background: rgb(255, 255, 255) !important;
-    opacity: 0.85;
-    background: linear-gradient(45deg, #9a2323 12%,#242b4b 72%) !important;
-    color: #fff;
-}
-body.home a {
-    color: #fff;
-}
-body.home main article{
-    display: table;
+body.home main article {
     height: 100%;
     width: 100%;
-    margin: 0;
+    display: table;
+    background-color: rgba(37, 134, 154, 0.9) !important;
+    color: #fff;
 }
-body.home #masthead {
-    max-height: 20%;
-}
-body.home #content {
-    max-height: 80%;
+body.home main article a {
+    color: #fff;
 }
 body.home nav.toggled .menu-main-container a {
     color: #000;
 }
 body.home .entry-content {
-    display: table-cell;
     vertical-align: middle;
     text-align: center;
-}
-.entry-content, .entry-summary {
-    margin: 0.5em 0 0;
+    display: table-cell;
 }
 .entry-header {
     margin-top: -5px;
@@ -751,20 +755,6 @@ body.home .entry-content {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-nav.toggled .menu-main-container {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-}
-nav.toggled .menu-main-container li {
-    padding: 6px 0px;
-    border-top: 1px solid #ddd;
-}
-nav.toggled .menu-main-container li:last-of-type {
-    border-bottom: 1px solid #ddd;
-}
 
 /*--------------------------------------------------------------
 11.2 Asides
@@ -772,15 +762,6 @@ nav.toggled .menu-main-container li:last-of-type {
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
-}
-
-/*--------------------------------------------------------------
-11.3 Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-.bypostauthor {
 }
 
 /*--------------------------------------------------------------
@@ -876,7 +857,7 @@ object {
 	Zoomed in above 900 px
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
-	#page, #masthead, #content, #primary, #colophon {
+	#page, #masthead, #content, #colophon {
 		width: @12cols;
 	}
     .site-title {
@@ -902,7 +883,7 @@ object {
 	Zoomed in above 1200 px
 */
 @media screen and (min-width: (@16cols + @gutter/@em)) {
-	#page, #masthead, #content, #primary, #colophon {
+	#page, #masthead, #content, #colophon {
 		width: @16cols;
 	}
     .site-title {
@@ -924,5 +905,12 @@ object {
     }
     .category article:nth-of-type(4n) {
         margin-right: 0;
+    }
+    body.home #masthead {
+        padding: 0 5%;
+        width: 100%;
+    }
+    body.home .main-navigation {
+        margin-left: inherit;
     }
 }

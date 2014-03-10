@@ -7,24 +7,22 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+            <?php get_template_part( 'content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || '0' != get_comments_number() ) :
+                    comments_template();
+                endif;
+            ?>
 
-			<?php endwhile; // end of the loop. ?>
+        <?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    </main><!-- #main -->
 
     <script type="text/javascript">
         var bgImgs = {};
@@ -48,9 +46,9 @@ get_header(); ?>
         
         var i = 0;
         var bgInterval = setInterval(function() {
-            var html = document.getElementsByTagName("html")[0];
+            var main = document.getElementsByTagName("main")[0];
             var index = (++i) % bgImgsSize;
-            html.style.backgroundImage = "url(" + bgImgs[index].url + ")";
+            main.style.backgroundImage = "url(" + bgImgs[index].url + ")";
             document.getElementById("forwhom").innerHTML = bgImgs[index].title;
             document.getElementById("forwhom").href = bgImgs[index].href;
         }, 4000);
