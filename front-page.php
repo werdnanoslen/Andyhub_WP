@@ -31,24 +31,24 @@ get_header(); ?>
         bgImgs[bgImgsSize++] = {
             "title":    "you",
             "href":     "/contact",
-            "url":      ""
+            "img":      ""
         };
         bgImgs[bgImgsSize++] = {
             "title":    "communities",
             "href":     "/concepts/",
-            "url":      "http://andyhub.com/projects/englishavenue/images/englishavenue.jpg"
+            "img":      "http://andyhub.com/projects/englishavenue/images/englishavenue.jpg"
         };
         bgImgs[bgImgsSize++] = {
             "title":    "society",
             "href":     "/work/",
-            "url":      "http://andyhub.com/projects/gleanhub/images/gleanhub_screenshot.png"
+            "img":      "http://andyhub.com/projects/gleanhub/images/gleanhub_screenshot.png"
         };
         
         var i = 0;
         var bgInterval = setInterval(function() {
             var main = document.getElementsByTagName("main")[0];
             var index = (++i) % bgImgsSize;
-            main.style.backgroundImage = "url(" + bgImgs[index].url + ")";
+            main.style.backgroundImage = "url(" + bgImgs[index].img + ")";
             document.getElementById("forwhom").innerHTML = bgImgs[index].title;
             document.getElementById("forwhom").href = bgImgs[index].href;
         }, 4000);
