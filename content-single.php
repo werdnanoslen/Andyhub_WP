@@ -28,6 +28,10 @@
                 <td>Skills/Subjects:</td>
                 <td><?php echo get_the_tag_list('',', ','') ?></td>
             </tr>
+            <tr>
+                <td>URL:</td>
+                <td><?php echo get_post_custom_values('url')[0]; ?></td>
+            </tr>
         </table>
         
 		<?php the_content(); ?>
