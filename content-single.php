@@ -12,6 +12,24 @@
     <?php endif; ?>
 
 	<div class="entry-content">
+        <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" 
+                 alt="<?php the_title(); ?>" class="aligncenter size-full" />
+        
+        <table class="case-attributes">
+            <tr>
+                <td>Client:</td>
+                <td><?php echo get_post_custom_values('client')[0]; ?></td>
+            </tr>
+            <tr>
+                <td>Dates:</td>
+                <td><?php echo get_post_custom_values('dates')[0]; ?></td>
+            </tr>
+            <tr>
+                <td>Skills/Subjects:</td>
+                <td><?php echo get_the_tag_list('',', ','') ?></td>
+            </tr>
+        </table>
+        
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -22,39 +40,6 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'andyhub_wp' ) );
-
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'andyhub_wp' ) );
-
-			if ( ! andyhub_wp_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'andyhub_wp' );
-				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'andyhub_wp' );
-				}
-
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'andyhub_wp' );
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'andyhub_wp' );
-				}
-
-			} // end check for categories on this blog
-
-			printf(
-				$meta_text,
-				$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
-
 		<?php edit_post_link( __( 'Edit', 'andyhub_wp' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-## -->
