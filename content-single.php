@@ -12,27 +12,32 @@
     <?php endif; ?>
 
 	<div class="entry-content">
-        <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" 
-                 alt="<?php the_title(); ?>" class="aligncenter size-full" />
-        
-        <table class="case-attributes">
-            <tr>
-                <td>Client:</td>
-                <td><?php echo get_post_custom_values('client')[0]; ?></td>
-            </tr>
-            <tr>
-                <td>Dates:</td>
-                <td><?php echo get_post_custom_values('dates')[0]; ?></td>
-            </tr>
-            <tr>
-                <td>Skills/Subjects:</td>
-                <td><?php echo get_the_tag_list('',', ','') ?></td>
-            </tr>
-            <tr>
-                <td>URL:</td>
-                <td><?php echo get_post_custom_values('url')[0]; ?></td>
-            </tr>
-        </table>
+        <div class="case-attributes">
+            <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" 
+                     alt="<?php the_title(); ?>" class="size-full" />
+            <table>
+                <tr>
+                    <td>Client:</td>
+                    <td><?php echo get_post_custom_values('client')[0]; ?></td>
+                </tr>
+                <tr>
+                    <td>Dates:</td>
+                    <td><?php echo get_post_custom_values('dates')[0]; ?></td>
+                </tr>
+                <tr>
+                    <td>Skills/Subjects:</td>
+                    <td><?php echo get_the_tag_list('',', ','') ?></td>
+                </tr>
+                <tr>
+                    <td>URL:</td>
+                    <td>
+                        <a href="<?php echo get_post_custom_values('url')[0]; ?>">
+                            <?php echo get_post_custom_values('url')[0]; ?>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
         
 		<?php the_content(); ?>
 		<?php
