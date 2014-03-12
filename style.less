@@ -488,8 +488,9 @@ article.category-work img, article.category-concepts img {
 /*--------------------------------------------------------------
 6.1 Links
 --------------------------------------------------------------*/
+@link-color: #3990A2;
 a {
-	color: #3990A2;
+	color: @link-color;
     text-decoration: none;
 }
 a:hover,
@@ -746,7 +747,23 @@ body.home .entry-content {
     display: table-cell;
 }
 
-.entry-header {
+body.category .entry-content p {
+    margin-bottom: 0.5em;
+}
+body.category footer .tags-links a {
+    font-size: 0.8em;
+    border: 1px solid #dadada;
+    background-color: #fafafa;
+    padding: 0 2px;
+    display: inline-block;
+}
+body.category footer .tags-links a:hover {
+    text-decoration: none;
+    background-color: @link-color;
+    color: #fff;
+}
+
+body.single .entry-header {
     margin-bottom: 1.5em;
     text-align: center;
 }

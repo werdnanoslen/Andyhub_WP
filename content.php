@@ -27,11 +27,11 @@
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'andyhub_wp' ) );
+				$tags_list = get_the_tag_list( '', __( ' ', 'andyhub_wp' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'andyhub_wp' ), $tags_list ); ?>
+				<?php echo $tags_list; ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
