@@ -2,6 +2,12 @@
 /**
  * @package Andyhub_WP
  */
+$excerpt_image = get_post_custom_values('excerpt_image')[0];
+$client = get_post_custom_values('client')[0];
+$dates = get_post_custom_values('dates')[0];
+$tags = get_the_tag_list('',', ','');
+$url = get_post_custom_values('url')[0];
+$hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url);
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -13,30 +19,41 @@
 
 	<div class="entry-content">
         <div class="case-attributes">
-            <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" 
-                     alt="<?php the_title(); ?>" class="size-full" />
+            <?php if ($hasCaseAttributes): ?>
+            <?php if ($excerpt_image): ?>
+            <img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+            <?php endif; ?>
             <table>
+                <?php if ($client): ?>
                 <tr>
                     <td>Client:</td>
-                    <td><?php echo get_post_custom_values('client')[0]; ?></td>
+                    <td><?php echo $client; ?></td>
                 </tr>
+                <?php endif; ?>
+                <?php if ($dates): ?>
                 <tr>
                     <td>Dates:</td>
-                    <td><?php echo get_post_custom_values('dates')[0]; ?></td>
+                    <td><?php echo $dates; ?></td>
                 </tr>
+                <?php endif; ?>
+                <?php if ($tags): ?>
                 <tr>
                     <td>Skills/Subjects:</td>
-                    <td><?php echo get_the_tag_list('',', ','') ?></td>
+                    <td><?php echo $tags; ?></td>
                 </tr>
+                <?php endif; ?>
+                <?php if ($url): ?>
                 <tr>
                     <td>URL:</td>
                     <td>
-                        <a href="<?php echo get_post_custom_values('url')[0]; ?>">
-                            <?php echo get_post_custom_values('url')[0]; ?>
+                        <a href="<?php echo $url; ?>">
+                            <?php echo $url; ?>
                         </a>
                     </td>
                 </tr>
+                <?php endif; ?>
             </table>
+            <?php endif; ?>
         </div>
         
 		<?php the_content(); ?>
