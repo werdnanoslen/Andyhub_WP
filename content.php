@@ -2,12 +2,14 @@
 /**
  * @package Andyhub_WP
  */
+
+$img = get_post_custom_values('excerpt_image')[0];
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if (!is_search()) : // Don't display excerpt_image for Search ?>
+    <?php if (!is_search() && strlen($img) > 0) : // Don't display excerpt_image for Search ?>
         <a href="<?php the_permalink(); ?>" rel="bookmark">
-            <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" alt="<?php the_title(); ?>" />
+            <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>" />
         </a>
     <?php endif; ?>
     
