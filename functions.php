@@ -79,7 +79,8 @@ add_action( 'widgets_init', 'andyhub_wp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function andyhub_wp_scripts() {
-	wp_enqueue_style( 'andyhub_wp-style', get_stylesheet_uri() );
+    $version = filemtime(get_stylesheet_directory() . '/style.css');
+	wp_enqueue_style( 'andyhub_wp-style', get_stylesheet_uri(), array(), $version );
 
 	wp_enqueue_script( 'andyhub_wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
