@@ -5,7 +5,9 @@
  * @package Andyhub_WP
  */
 
-get_header(); ?>
+get_header();
+global $wp_query;
+?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -13,9 +15,10 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'andyhub_wp' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+                <?php get_search_form(); ?>
+				<h3 class="page-title"><?php printf( __( 'I\'ve got exactly %s things for that:', 'andyhub_wp' ), '<span>' . $wp_query->found_posts . '</span>' ); ?></h3>
 			</header><!-- .page-header -->
-
+            <br />
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 

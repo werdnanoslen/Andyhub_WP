@@ -489,7 +489,10 @@ article[class*="category-"] {
     display: inline-block;
     vertical-align: top;
 }
-
+article[class*="category-"] .entry-content p,
+article[class*="category-"] .entry-summary p {
+	margin-bottom: 0.5em;
+}
 article[class*="category-"] img {
     max-width: 100%;
     display: block;
@@ -778,9 +781,6 @@ body.category .page-header .taxonomy-description {
 	font-family: 'Lekton', monospace;
 	font-size: 1.5em;
 	margin-bottom: 1.5em;
-}
-body.category .entry-content p {
-    margin-bottom: 0.5em;
 }
 body.category footer .tags-links a {
     font-size: 0.8em;
