@@ -5,6 +5,18 @@
  * @package Andyhub_WP
  */
 
+ /**
+  * Handle empty search parameter ("/?s=") as a search for " "
+  */
+ if(!is_admin()) {
+	add_action('init', 'search_query_fix');
+	function search_query_fix() {
+		if(isset($_GET['s']) && $_GET['s'] == '') {
+			$_GET['s'] = ' ';
+		}
+	}
+}
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
