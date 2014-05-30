@@ -21,7 +21,7 @@ get_header(); ?>
 							single_cat_title();
 
 						elseif ( is_tag() ) :
-							single_tag_title();
+							printf( 'Articles tagged \'%s\'', single_tag_title("", false) );
 
 						elseif ( is_author() ) :
 							printf( __( 'Author: %s', 'andyhub_wp' ), '<span class="vcard">' . get_the_author() . '</span>' );
