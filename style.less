@@ -485,21 +485,21 @@ main {
     margin-top: 1em;
 }
 
-body.category article {
+body.archive article {
     display: inline-block;
     vertical-align: top;
 	margin-bottom: 2em;
 }
 
-body.category .entry-content > p,
-body.category .entry-content > ul,
-body.category .entry-content > ol,
-body.category .entry-content > table,
-body.category .entry-summary p {
+body.archive .entry-content > p,
+body.archive .entry-content > ul,
+body.archive .entry-content > ol,
+body.archive .entry-content > table,
+body.archive .entry-summary p {
 	margin-bottom: 0.5em;
 }
 
-body.category article img {
+body.archive article img {
     max-width: 100%;
     display: block;
     margin: 0 auto;
@@ -774,19 +774,24 @@ body.home .entry-content {
     display: table-cell;
 }
 
-body.category .page-header .taxonomy-description {
-	font-family: @header-fonts;
-	font-size: 1.5em;
+body.archive .page-header {
 	margin-bottom: 1.5em;
 }
-body.category footer .tags-links a {
+body.archive .page-header .taxonomy-description {
+	font-family: @header-fonts;
+	font-size: 1.5em;
+}
+body.archive .page-header .taxonomy-description p {
+	margin-bottom: 0;
+}
+body.archive footer .tags-links a {
     font-size: 0.8em;
     border: 1px solid #dadada;
     background-color: #fafafa;
     padding: 0 2px;
     display: inline-block;
 }
-body.category footer .tags-links a:hover {
+body.archive footer .tags-links a:hover {
     text-decoration: none;
     background-color: @link-color;
     color: #fff;
@@ -932,7 +937,7 @@ object {
 	body.single .entry-content > table {
 		width: inherit;
 	}
-	.category article footer.entry-meta {
+	body.archive article footer.entry-meta {
 		display: none;
 	}
 }
@@ -960,11 +965,11 @@ object {
     .main-navigation li {
         width: @2cols;
     }
-    .category article {
+    body.archive article {
         margin-right: 1em;
         width: @6cols;
     }
-    .category article:nth-of-type(2n) {
+    body.archive article:nth-of-type(2n) {
         margin-right: 0;
     }
 	body.single .entry-content > p,
@@ -1003,12 +1008,12 @@ object {
     .main-navigation li {
         width: @2cols;
     }
-    .category article,
-    .category article:nth-of-type(2n) {
+    body.archive article,
+    body.archive article:nth-of-type(2n) {
         margin-right: 1em;
         width: @4cols;
     }
-    .category article:nth-of-type(4n) {
+    body.archive article:nth-of-type(4n) {
         margin-right: 0;
     }
 	body.single .entry-content > p,
