@@ -212,23 +212,20 @@ textarea {
 	font-size: @font-size*1px;
 	line-height: 1.5;
 }
+h1, h2, h3 {
+	font-family: @header-fonts;
+	line-height: 1.15;
+}
 h1 {
-    font-family: @header-fonts;
     font-weight: bold;
     font-size: 3em;
 }
 h2 {
-    font-family: @header-fonts;
     font-style: italic;
     font-size: 1.5em;
 }
 h3 {
-    font-family: @header-fonts;
     font-size: 1.5em;
-}
-h4, h5, h6 {
-    font-family: @header-fonts;
-    font-size: 1em;
 }
 p {
 	margin-bottom: 1.5em;
@@ -816,6 +813,7 @@ body.single .entry-header {
 }
 .case-attributes table td:first-of-type {
     font-weight: bold;
+	padding-right: 5px;
 }
 .case-attributes table td:last-of-type {
     text-align: right;
