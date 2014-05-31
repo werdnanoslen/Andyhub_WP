@@ -21,7 +21,13 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
         <div class="case-attributes">
             <?php if ($hasCaseAttributes): ?>
             <?php if ($excerpt_image): ?>
-            <img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+				<?php if ($url): ?>
+					<a href="<?php echo $url; ?>">
+						<img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+					</a>
+				<?php else: ?>
+					<img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+				<?php endif; ?>
             <?php endif; ?>
             <table>
                 <?php if ($client): ?>
@@ -55,7 +61,7 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
             </table>
             <?php endif; ?>
         </div>
-        
+
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
