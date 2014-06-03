@@ -26,9 +26,8 @@
                 <span id="blog_name"><?php bloginfo( 'name' ); ?></span>
                 <span id="blog_description"><?php bloginfo('description'); ?></span>
             </a>
-        </div>
-        <nav id="site-navigation" class="main-navigation" role="navigation">
-            <h1 class="menu-toggle"><?php _e( '&#8803;', 'andyhub_wp' ); ?></h1>
+        </div><nav id="site-navigation" class="main-navigation" role="navigation">
+            <h1 class="menu-toggle"><?php _e( '&#x2261;', 'andyhub_wp' ); ?></h1>
             <a class="skip-link screen-reader-text" href="#content">
                 <?php _e( 'Skip to content', 'andyhub_wp' ); ?>
             </a>

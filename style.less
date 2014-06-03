@@ -161,7 +161,7 @@ img {
 @font-face {
     font-family: 'Asap';
     src: url('fonts/asap/asap-regular-webfont.eot');
-    src: url('asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    src: url('fonts/asap/asap-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/asap/asap-regular-webfont.woff') format('woff'),
          url('fonts/asap/asap-regular-webfont.ttf') format('truetype'),
          url('fonts/asap/asap-regular-webfont.svg#asapregular') format('svg');
@@ -536,7 +536,7 @@ a {
     text-decoration: none;
 }
 .site-title span {
-	line-height: 100%;
+	line-height: 1;
 	display: block;
 }
 .site-title #blog_name {
@@ -587,9 +587,11 @@ a {
 .menu-toggle {
 	cursor: pointer;
 	display: none;
-    font-size: 5em;
-    line-height: 60%;
-	color: #fff;
+    font-size:3.96em;
+	line-height:.5;
+	color:#fff;
+	margin:0.15em 0;
+	padding: 0;
 }
 .site-main .comment-navigation,
 .site-main .paging-navigation,
@@ -808,9 +810,11 @@ body.single .entry-header {
     margin-bottom: 1em;
     max-width: 100%;
 }
+.case-attributes img {
+	margin-bottom: 1em;
+}
 .case-attributes table {
     font-size: 0.9em;
-    margin-top: 1em;
     color: #666;
 }
 .case-attributes table td {
@@ -908,14 +912,14 @@ object {
 	Zoomed out below 320 px
 */
 @media screen and (max-width: (@12cols + @gutter/@em)) {
-    .site-title a {
-        font-size: 2em;
-    }
+	h1 {
+		font-size: 2em;
+	}
 	.site-title #blog_name {
-		font-size: 1.05em;
+		font-size: 2em;
 	}
 	.site-title #blog_description {
-		font-size: 0.5em;
+		font-size: 1em;
 	}
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
@@ -934,7 +938,11 @@ object {
 	body.single .entry-content > p,
 	body.single .entry-content > ul,
 	body.single .entry-content > ol,
-	body.single .entry-content > table {
+	body.single .entry-content > table,
+	body.page .entry-content > p,
+	body.page .entry-content > ul,
+	body.page .entry-content > ol,
+	body.page .entry-content > table {
 		width: inherit;
 	}
 	body.archive article footer.entry-meta {
@@ -975,7 +983,11 @@ object {
 	body.single .entry-content > p,
 	body.single .entry-content > ul,
 	body.single .entry-content > ol,
-	body.single .entry-content > table {
+	body.single .entry-content > table,
+	body.page .entry-content > p,
+	body.page .entry-content > ul,
+	body.page .entry-content > ol,
+	body.page .entry-content > table {
 		line-height: 1.8;
 	}
     .case-attributes {
@@ -1019,7 +1031,11 @@ object {
 	body.single .entry-content > p,
 	body.single .entry-content > ul,
 	body.single .entry-content > ol,
-	body.single .entry-content > table {
+	body.single .entry-content > table,
+	body.page .entry-content > p,
+	body.page .entry-content > ul,
+	body.page .entry-content > ol,
+	body.page .entry-content > table {
 		line-height: inherit;
 		width: @10cols;
 	}
