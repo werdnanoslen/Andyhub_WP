@@ -18,7 +18,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<link rel="author" href="https://google.com/+andrewnelson?rel=author">
+<link rel="author" href="https://plus.google.com/105150930454300390501?rel=author">
 
 <?php wp_head(); ?>
 </head>
