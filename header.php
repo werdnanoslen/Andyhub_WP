@@ -15,6 +15,18 @@
 <meta name="description" content="<?php echo get_the_excerpt(); ?>">
 <meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
 <?php endif; ?>
+<?php
+$taglist = '';
+$posttags = get_the_tags();
+if ($posttags) {
+    foreach($posttags as $tag) {
+        $taglist .= $tag->name . ',';
+    }
+}
+?>
+<?php if ($taglist != ''): ?>
+<meta name="keywords" content="<?php echo $taglist; ?>">
+<?php endif; ?>
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
