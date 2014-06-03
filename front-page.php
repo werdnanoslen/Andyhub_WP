@@ -36,12 +36,12 @@ get_header(); ?>
         bgImgs[bgImgsSize++] = {
             "title":    "communities",
             "href":     "/concepts/",
-            "img":      "http://andyhub.com/projects/englishavenue/images/englishavenue.jpg"
+            "img":      "http://andyhub.com/wordpress/wp-content/uploads/2014/05/gleanhub_screenshot.png"
         };
         bgImgs[bgImgsSize++] = {
-            "title":    "society",
-            "href":     "/work/",
-            "img":      "http://andyhub.com/projects/gleanhub/images/gleanhub_screenshot.png"
+            "title":    "companies",
+            "href":     "/portfolio/",
+            "img":      "http://andyhub.com/wordpress/wp-content/uploads/primanetsc.png"
         };
         
         var i = 0;
