@@ -27,7 +27,7 @@ get_header(); ?>
     <script type="text/javascript">
         var bgImgs = {};
         var bgImgsSize = 0;
-        
+
         bgImgs[bgImgsSize++] = {
             "title":    "you",
             "href":     "/contact",
@@ -43,7 +43,7 @@ get_header(); ?>
             "href":     "/portfolio/",
             "img":      "http://andyhub.com/wordpress/wp-content/uploads/primanetsc.png"
         };
-        
+
         var i = 0;
         var bgInterval = setInterval(function() {
             var main = document.getElementsByTagName("main")[0];
