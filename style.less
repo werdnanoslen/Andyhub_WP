@@ -498,6 +498,11 @@ body.archive .entry-summary p {
 	margin-bottom: 0.5em;
 }
 
+.entry-content > aside {
+	margin: 0.5em auto;
+	max-width: 100%;
+}
+
 body.archive article img {
     max-width: 100%;
     display: block;
@@ -892,6 +897,9 @@ iframe,
 object {
 	max-width: 100%;
 }
+iframe.twitter-timeline {
+	width: inherit !important;
+}
 
 /*
 	Mobile layout
@@ -930,6 +938,9 @@ object {
 	body.page .entry-content > ol,
 	body.page .entry-content > table {
 		width: inherit;
+	}
+	.entry-content > aside {
+		display: none;
 	}
 	body.archive article footer.entry-meta {
 		display: none;
@@ -976,7 +987,8 @@ object {
 	body.page .entry-content > table {
 		line-height: 1.8;
 	}
-    .case-attributes {
+    .case-attributes, .entry-content > aside {
+		margin-top: 0;
         margin-left: @gutter/@em;
         max-width: @6cols;
         float: right;
@@ -1025,7 +1037,8 @@ object {
 		line-height: inherit;
 		width: @10cols;
 	}
-    .case-attributes {
+    .case-attributes, .entry-content > aside {
+		margin-top: inherit;
         margin-left: @gutter/@em;
         max-width: @8cols;
         float: right;
