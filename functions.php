@@ -129,7 +129,24 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Add custom styles to editor
+ */
 function my_theme_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
+
+/**
+ * Add custom fields to RSS feed (andyhub.com/feed)
+ */
+add_action('rss2_item', 'andyhub_rss2_item');
+function andyhub_rss2_item() {
+    $fields = array('client', 'dates', 'excerpt_image', 'url');
+    $post_id = get_the_ID();
+    foreach($fields as $field) {
+        if ($value = get_post_meta($post_id, $field, true)) {
+            echo "<{$field}>{$value}</{$field}>\n";
+        }
+    }
+}
