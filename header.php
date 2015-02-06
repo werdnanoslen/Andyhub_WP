@@ -11,6 +11,7 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:image" content="http://andyhub.com/wordpress/wp-content/themes/Andyhub_WP/site_snapshot.png" />
 <?php if (get_the_excerpt() != ''): ?>
 <meta name="description" content="<?php echo get_the_excerpt(); ?>">
 <meta itemprop="description" content="<?php echo get_the_excerpt(); ?>">
