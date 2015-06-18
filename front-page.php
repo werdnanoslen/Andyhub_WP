@@ -39,6 +39,11 @@ get_header(); ?>
             "img":      "http://andyhub.com/wordpress/wp-content/uploads/2014/05/gleanhub_screenshot.png"
         };
         bgImgs[bgImgsSize++] = {
+            "title":    "research",
+            "href":     "/portfolio/magic-window",
+            "img":      "http://andyhub.com/wordpress/wp-content/uploads/15C5400-P1-001.jpg"
+        };
+        bgImgs[bgImgsSize++] = {
             "title":    "companies",
             "href":     "/portfolio/",
             "img":      "http://andyhub.com/wordpress/wp-content/uploads/primanetsc.png"
