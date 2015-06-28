@@ -36,7 +36,7 @@ get_header(); ?>
         bgImgs[bgImgsSize++] = {
             "title":    "communities",
             "href":     "/concepts/",
-            "img":      "http://andyhub.com/wordpress/wp-content/uploads/2014/05/gleanhub_screenshot.png"
+            "img":      "http://andyhub.com/wordpress/wp-content/uploads/gleanhub_screenshot.png"
         };
         bgImgs[bgImgsSize++] = {
             "title":    "research",
