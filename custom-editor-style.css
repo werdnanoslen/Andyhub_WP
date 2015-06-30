@@ -96,10 +96,10 @@ body#tinymce.wp-editor h1 {
 }
 body#tinymce.wp-editor h2 {
     font-family: 'Roboto Slab', monospace;
-    font-style: italic;
     font-size: 1.5em;
 }
 body#tinymce.wp-editor h3 {
     font-family: 'Roboto Slab', monospace;
+    font-style: bold;
     font-size: 1.5em;
 }
