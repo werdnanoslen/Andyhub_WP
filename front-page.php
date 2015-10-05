@@ -7,56 +7,52 @@
 
 get_header(); ?>
 
-    <main id="main" class="site-main" role="main">
+    <section id="primary" class="content-area">
+        <main class="site-main" role="main">
+            <img    src="wp-content/themes/Andyhub_WP/img/civichero.png"
+                    alt="human-government interaction"
+                    class="hero-image" />
+            <h1>Andy does <span style="color: #75B7BB">civic tech</span> & <span style="color: #75B7BB">service design</span></h1>
+            <p>I'm currently researching the HCI aspects of civic media and urban computing. My goal is to understand how design and innovative technologies. could best be used to improve public services and opportunities for civic engagement. <a href="portfolio">More...</a>
+        </main><!-- #main -->
+    </section>
 
-        <?php while ( have_posts() ) : the_post(); ?>
-
-            <?php get_template_part( 'content', 'page' ); ?>
-
+    <section id="secondary" class="content-area">
+        <main class="site-main" role="main">
             <?php
-                // If comments are open or we have at least one comment, load up the comment template
-                if ( comments_open() || '0' != get_comments_number() ) :
-                    comments_template();
-                endif;
+                $args = array(
+                    'category_name'    => 'Now',
+                    'post_status'      => 'publish',
+                    'suppress_filters' => true
+                );
+                $posts_array = get_posts($args);
+                if (count($posts_array) > 0) :
             ?>
+                <h1>Things I'm doing right now:</h1>
+                <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
+                        <article id="post-<?php the_ID(); ?>">
+                            <a href="<?php the_permalink(); ?>" rel="bookmark">
+                                <img src="<?php echo get_post_custom_values('excerpt_image')[0]; ?>" alt="<?php the_title(); ?>" />
+                            </a>
 
-        <?php endwhile; // end of the loop. ?>
-
-    </main><!-- #main -->
-
-    <script type="text/javascript">
-        var bgImgs = {};
-        var bgImgsSize = 0;
-
-        bgImgs[bgImgsSize++] = {
-            "title":    "you",
-            "href":     "/contact",
-            "img":      ""
-        };
-        bgImgs[bgImgsSize++] = {
-            "title":    "communities",
-            "href":     "/concepts/",
-            "img":      "http://andyhub.com/wordpress/wp-content/uploads/gleanhub_screenshot.png"
-        };
-        bgImgs[bgImgsSize++] = {
-            "title":    "research",
-            "href":     "/portfolio/magic-window",
-            "img":      "http://andyhub.com/wordpress/wp-content/uploads/15C5400-P1-001.jpg"
-        };
-        bgImgs[bgImgsSize++] = {
-            "title":    "companies",
-            "href":     "/portfolio/",
-            "img":      "http://andyhub.com/wordpress/wp-content/uploads/primanetsc.png"
-        };
-
-        var i = 0;
-        var bgInterval = setInterval(function() {
-            var main = document.getElementsByTagName("main")[0];
-            var index = (++i) % bgImgsSize;
-            main.style.backgroundImage = "url(" + bgImgs[index].img + ")";
-            document.getElementById("forwhom").innerHTML = bgImgs[index].title;
-            document.getElementById("forwhom").href = bgImgs[index].href;
-        }, 4000);
-    </script>
+                            <header class="entry-header">
+                                <h2 class="entry-title">
+                                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                                </h2>
+                            </header><!-- .entry-hfeader -->
+                        </article><!-- #post-## -->
+                <?php endforeach;
+                    wp_reset_postdata();
+                ?>
+                <article id="more-now">
+                    <header class="entry-header">
+                        <h1 class="entry-title">
+                            <a href="projects" rel="bookmark">More</a>
+                        </h1>
+                    </header><!-- .entry-hfeader -->
+                </article>
+            <?php endif; ?>
+        </main><!-- #main -->
+    </section>
 
 <?php get_footer(); ?>

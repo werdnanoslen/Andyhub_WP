@@ -236,7 +236,7 @@ h3 {
     font-size: 1.5em;
 }
 p {
-	margin-bottom: 1.5em;
+	padding-bottom: 1.5em;
 }
 b, strong {
 	font-weight: bold;
@@ -490,7 +490,7 @@ img#wpstats {
 }
 
 main {
-    margin-top: 1em;
+    padding-top: 1em;
 }
 
 body.archive article {
@@ -601,7 +601,7 @@ a {
 .menu-toggle {
 	cursor: pointer;
 	font-size: 3.5em;
-	line-height: 0.75;
+	line-height: 0.5;
 	color: #adadad;
 	padding: 0;
 	display: none;
@@ -692,6 +692,11 @@ nav.toggled .menu-main-container li:last-of-type {
 	display: block;
 	margin: 0 auto;
 }
+.verticalcenter {
+	display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -744,53 +749,6 @@ nav.toggled .menu-main-container li:last-of-type {
 /*--------------------------------------------------------------
 11.1 Posts and pages
 --------------------------------------------------------------*/
-body.home, body.home #page, body.home #content, body.home main {
-    height: 100%;
-}
-body.home #page, body.home header, body.home #content {
-    width: 100%;
-}
-body.home header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-body.home #content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-body.home main {
-    background-repeat: none;
-    background-size: cover;
-    transition: background-image 1.0s linear;
-    margin-top: 0;
-}
-body.home main article {
-    height: 100%;
-    width: 100%;
-    display: table;
-    background-color: rgba(37, 134, 154, 0.9) !important;
-    color: #fff;
-}
-body.home main article a {
-    color: #fff;
-    text-decoration: underline;
-}
-body.home nav.toggled .menu-main-container a {
-    color: #000;
-}
-body.home article.page {
-    margin-top: 0;
-}
-body.home .entry-content {
-    vertical-align: middle;
-    text-align: center;
-    display: table-cell;
-}
-
 body.archive .page-header {
 	margin-bottom: 1.5em;
 }
@@ -812,6 +770,37 @@ body.archive footer .tags-links a:hover {
     text-decoration: none;
     background-color: @link-color;
     color: #fff;
+}
+
+body.home {
+	background-color: #0E2232;
+}
+body.home section h1,
+body.home section a {
+	color: #ffffff;
+	display: block;
+	text-transform: uppercase;
+}
+body.home h1 {
+	padding-bottom: 0.25em;
+}
+body.home section#primary,
+body.home section#secondary {
+	color: #ffffff;
+}
+body.home img.hero-image {
+	margin: 2em 0;
+}
+body.home article {
+	margin-bottom: 2em;
+}
+body.home article img {
+	vertical-align: middle;
+	width: 100%;
+}
+body.home article#more-now {
+	height: vwidth;
+	text-align: center;
 }
 
 body.single .entry-header {
@@ -984,7 +973,7 @@ iframe.twitter-timeline {
     }
     body.archive article {
         margin-right: 0.9em;
-        width: @6cols;
+        width: @4cols;
     }
     body.archive article:nth-of-type(2n) {
         margin-right: 0;
@@ -1004,6 +993,18 @@ iframe.twitter-timeline {
         margin-left: @gutter/@em;
         max-width: @6cols;
         float: right;
+    }
+	body.home section#secondary article {
+		display: inline-block;
+        margin-right: 0.9em;
+		vertical-align: top;
+		width: @4cols;
+	}
+	body.home section#secondary article > a {
+		height: @4cols;
+	}
+	body.home section#secondary article:nth-of-type(3n) {
+        margin-right: 0;
     }
 }
 
@@ -1055,4 +1056,10 @@ iframe.twitter-timeline {
     .case-attributes table {
         font-size: 1em;
     }
+	body.home section#secondary article {
+		width: @4cols;
+	}
+	body.home section#secondary article > a {
+		height: @4cols;
+	}
 }
