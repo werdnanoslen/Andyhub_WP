@@ -792,7 +792,7 @@ body.home img.hero-image {
 	margin: 2em 0;
 }
 body.home article {
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 body.home article img {
 	vertical-align: middle;
@@ -996,7 +996,9 @@ iframe.twitter-timeline {
     }
 	body.home section#secondary article {
 		display: inline-block;
+		height: @4cols;
         margin-right: 0.9em;
+		padding-bottom: 0.25em;
 		vertical-align: top;
 		width: @4cols;
 	}
@@ -1006,6 +1008,9 @@ iframe.twitter-timeline {
 	body.home section#secondary article:nth-of-type(3n) {
         margin-right: 0;
     }
+	body.home section#secondary article#more-now header {
+		margin: (@2cols * (@em - 1.15) * 1px) 0;
+	}
 }
 
 /*
