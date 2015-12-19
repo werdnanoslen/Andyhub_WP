@@ -905,8 +905,7 @@ iframe.twitter-timeline {
 }
 
 /*
-	Mobile layout
-	Zoomed out below 320 px
+	Tiny layout
 */
 @media screen and (max-width: (@12cols + @gutter/@em)) {
 	.site-title #blog_name {
@@ -932,16 +931,6 @@ iframe.twitter-timeline {
     .main-navigation li {
         display: list-item;
     }
-	body.single .entry-content > p,
-	body.single .entry-content > ul,
-	body.single .entry-content > ol,
-	body.single .entry-content > table,
-	body.page .entry-content > p,
-	body.page .entry-content > ul,
-	body.page .entry-content > ol,
-	body.page .entry-content > table {
-		width: inherit;
-	}
 	.entry-content > aside {
 		display: none;
 	}
@@ -951,8 +940,33 @@ iframe.twitter-timeline {
 }
 
 /*
-	Tablet layout
-	Zoomed in above 900 px
+	Small layout
+*/
+@media screen and (min-width: (@8cols + @gutter/@em)) {
+	#page, #masthead, #content, #colophon {
+		width: @8cols;
+	}
+	body.home section#secondary article {
+		display: inline-block;
+		height: @4cols;
+        margin-right: 0.9em;
+		padding-bottom: 0.25em;
+		vertical-align: top;
+		width: @4cols;
+	}
+	body.home section#secondary article > a {
+		height: @4cols;
+	}
+	body.home section#secondary article:nth-of-type(2n) {
+        margin-right: 0;
+    }
+	body.home section#secondary article#more-now header {
+		margin: (@2cols * (@em - 1.15) * 1px) 0;
+	}
+}
+
+/*
+	Medium layout
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
 	h1 {
@@ -1007,6 +1021,9 @@ iframe.twitter-timeline {
 	body.home section#secondary article > a {
 		height: @4cols;
 	}
+	body.home section#secondary article:nth-of-type(2n) {
+        margin-right: 0.9em;
+    }
 	body.home section#secondary article:nth-of-type(3n) {
         margin-right: 0;
     }
@@ -1017,7 +1034,6 @@ iframe.twitter-timeline {
 
 /*
 	Widescreen layout
-	Zoomed in above 1200 px
 */
 @media screen and (min-width: (@16cols + @gutter/@em)) {
 	#page, #masthead, #content, #colophon {
