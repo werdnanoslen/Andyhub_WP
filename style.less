@@ -227,13 +227,14 @@ h1, h2, h3 {
 }
 h1 {
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2em;
 }
 h2 {
     font-size: 1.5em;
 }
 h3 {
-    font-size: 1.5em;
+	font-family: @body-fonts;
+    font-size: 1.25em;
 }
 p {
 	padding-bottom: 1.5em;
@@ -487,10 +488,6 @@ img#wpstats {
 #masthead a {
     color: #adadad;
 	text-decoration: none;
-}
-
-main {
-    padding-top: 1em;
 }
 
 body.archive article {
@@ -775,21 +772,26 @@ body.archive footer .tags-links a:hover {
 body.home {
 	background-color: #0E2232;
 }
-body.home section h1,
-body.home section a {
-	color: #ffffff;
-	display: block;
-	text-transform: uppercase;
-}
-body.home h1 {
-	padding-bottom: 0.25em;
-}
 body.home section#primary,
 body.home section#secondary {
 	color: #ffffff;
 }
+body.home section h1 {
+	display: block;
+	padding-bottom: 0.25em;
+	text-transform: uppercase;
+}
+body.home section h3 {
+	margin: 0.75em 0;
+}
+body.home section a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+body.home section#primary,
+body.home section#secondary,
 body.home img.hero-image {
-	margin: 2em 0;
+	margin-top: 2em;
 }
 body.home article {
 	margin-bottom: 3em;
@@ -907,9 +909,6 @@ iframe.twitter-timeline {
 	Zoomed out below 320 px
 */
 @media screen and (max-width: (@12cols + @gutter/@em)) {
-	h1 {
-		font-size: 2em;
-	}
 	.site-title #blog_name {
 		font-size: 2em;
 	}
@@ -956,6 +955,9 @@ iframe.twitter-timeline {
 	Zoomed in above 900 px
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
+	h1 {
+		font-size: 3em;
+	}
 	#page, #masthead, #content, #colophon {
 		width: @12cols;
 	}
@@ -1061,10 +1063,15 @@ iframe.twitter-timeline {
     .case-attributes table {
         font-size: 1em;
     }
-	body.home section#secondary article {
-		width: @4cols;
+	body.home section#primary,
+	body.home section#secondary,
+	body.home img.hero-image {
+		margin-top: 4em;
 	}
-	body.home section#secondary article > a {
-		height: @4cols;
+	body.home section#primary,
+	body.home section#secondary {
+		margin-left: @2cols;
+		margin-right: @2cols;
+		width: @12cols;
 	}
 }

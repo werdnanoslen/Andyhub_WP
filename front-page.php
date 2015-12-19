@@ -7,13 +7,13 @@
 
 get_header(); ?>
 
+    <img src="wp-content/themes/Andyhub_WP/img/civichero.png"
+         alt="human-government interaction" class="hero-image"
+    />
     <section id="primary" class="content-area">
         <main class="site-main" role="main">
-            <img    src="wp-content/themes/Andyhub_WP/img/civichero.png"
-                    alt="human-government interaction"
-                    class="hero-image" />
-            <h1>Andy does <span style="color: #75B7BB">civic tech</span> & <span style="color: #75B7BB">service design</span></h1>
-            <p>I'm currently researching the HCI aspects of civic media and urban computing. My goal is to understand how design and innovative technologies. could best be used to improve public services and opportunities for civic engagement. <a href="portfolio">More...</a>
+            <h1>I do <span style="color: #75B7BB">civic tech</span> & <span style="color: #75B7BB">service&nbsp;design</span></h1>
+            <h3>I'm currently researching the HCI aspects of civic media and urban computing. My goal is to understand how design and innovative technologies. could best be used to improve public services and opportunities for civic engagement. <a href="portfolio">More about me...</a></h3>
         </main><!-- #main -->
     </section>
 
