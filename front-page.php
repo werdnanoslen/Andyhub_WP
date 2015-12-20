@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-    <img src="wp-content/themes/Andyhub_WP/img/civichero.png"
+    <img src="<?php bloginfo( 'template_url' ); ?>/img/civichero.png"
          alt="human-government interaction" class="hero-image"
     />
     <section id="primary" class="content-area">
