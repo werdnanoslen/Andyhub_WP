@@ -123,10 +123,6 @@ img {
 /*--------------------------------------------------------------
 2.0 Typography
 --------------------------------------------------------------*/
-@font-size: 16;
-@em: @font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
-@text-elements: p, ul, ol, table;
-
 @font-face {
     font-family: 'Proxima Nova';
     src: url('fonts/proximanova/proximanovalight-webfont.eot');
@@ -211,6 +207,14 @@ img {
 @body-fonts: 'Proxima Nova', sans-serif;
 @header-fonts: 'Roboto Slab', monospace;
 
+// Using major third scale (1.25)
+@body-font-size: 16;
+@em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
+@small-font-size: 0.75em;
+@h3-font-size: 1em;
+@h2-font-size: 1.5em;
+@h1-font-size: 2em;
+
 body,
 button,
 input,
@@ -218,26 +222,28 @@ select,
 textarea {
 	color: #404040;
 	font-family: @body-fonts;
-	font-size: @font-size*1px;
+	font-size: @body-font-size*1px;
 	line-height: 1.5;
 }
 h1, h2, h3 {
+	line-height: 1.5;
+}
+h1, h2 {
 	font-family: @header-fonts;
-	line-height: 1.15;
+	font-weight: 600;
 }
 h1 {
-    font-weight: bold;
-    font-size: 2em;
+    font-size: @h1-font-size;
 }
 h2 {
-    font-size: 1.5em;
+    font-size: @h2-font-size;
 }
 h3 {
 	font-family: @body-fonts;
-    font-size: 1.25em;
+    font-size: @h3-font-size;
 }
 p {
-	padding-bottom: 1.5em;
+	padding-bottom: @h2-font-size;
 }
 b, strong {
 	font-weight: bold;
@@ -246,21 +252,20 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 blockquote {
-	margin: 0 1.5em;
+	margin: 0 @h2-font-size;
 }
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 @h2-font-size;
 }
 pre {
 	background: #eee;
 	font-family: "Lekton", monospace;
-	font-size: 15px;
-	font-size: 1.5rem;
+	font-size: @body-font-size;
 	line-height: 1.6;
-	margin-bottom: 1.6em;
+	margin-bottom: @h2-font-size;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: @h2-font-size;
 }
 code, kbd, tt, var {
 	font: 15px "Lekton", monospace;
@@ -301,10 +306,10 @@ hr {
 	background-color: #ccc;
 	border: 0;
 	height: 1px;
-	margin-bottom: 1.5em;
+	margin-bottom: @h2-font-size;
 }
 ul, ol {
-	padding: 0 0 1.5em 3em;
+	padding: 0 0 @h2-font-size 3em;
 }
 ul {
 	list-style: disc;
@@ -315,19 +320,19 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: @h2-font-size;
 }
 dt {
 	font-weight: bold;
 }
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 @h2-font-size @h2-font-size;
 }
 figure {
 	margin: 0;
 }
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 @h2-font-size;
 	width: 100%;
 }
 th {
@@ -358,8 +363,7 @@ input[type="submit"] {
 	color: rgba(0, 0, 0, .8);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 12px;
-	font-size: 1.2rem;
+	font-size: @h3-font-size;
 	line-height: 1;
 	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -466,11 +470,11 @@ img#wpstats {
 
 .site-header {
 	background-color: #0e2232;
-	padding: 2em 0;
+	padding: @h1-font-size 0;
 	margin-bottom: 1em;
 }
 
-#masthead, #content, #colophon, article[class*="category-"] {
+#masthead, header, #content, #colophon, article[class*="category-"] {
     width: 100%;
     margin: 0 auto;
 }
@@ -499,7 +503,7 @@ img#wpstats {
 body.archive article {
     display: inline-block;
     vertical-align: top;
-	margin-bottom: 2em;
+	margin-bottom: @h1-font-size;
 }
 
 body.archive .entry-content > p,
@@ -575,7 +579,7 @@ a {
 	float: left;
 	left: 0;
 	position: absolute;
-	top: 1.5em;
+	top: @h2-font-size;
 	z-index: 99999;
 }
 .main-navigation ul ul ul {
@@ -600,21 +604,17 @@ a {
 }
 .menu-toggle {
 	cursor: pointer;
-	font-size: 2em;
-	line-height: 0.9;
+	font-size: @h1-font-size;
+	line-height: @small-font-size;
 	color: #adadad;
 	padding: 0;
 	display: none;
 	background: none;
 }
-#masthead .current-menu-item a {
-	color: #75B7BB;
-	border-bottom: 3px #75B7BB solid;
-}
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 @h2-font-size;
 	overflow: hidden;
 }
 .comment-navigation .nav-previous,
@@ -645,12 +645,14 @@ nav.toggled .menu-main-container li {
     border-top: 1px solid #ddd;
 	font-weight: bold;
 }
-nav.toggled .menu-main-container li.current-menu-item {
+nav.toggled .menu-main-container li.current-menu-item,
+nav.toggled .menu-main-container li:hover {
 	background-color: #75B7BB;
 }
-nav.toggled .menu-main-container li.current-menu-item a {
+nav.toggled .menu-main-container li.current-menu-item a,
+nav.toggled .menu-main-container li:hover a {
 	border-bottom: none;
-	color: #ffffff;
+	color: #ffffff !important;
 }
 nav.toggled .menu-main-container li:last-of-type {
     border-bottom: 1px solid #ddd;
@@ -693,12 +695,12 @@ nav.toggled .menu-main-container li:last-of-type {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: @h2-font-size;
 }
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: @h2-font-size;
 }
 .aligncenter {
 	clear: both;
@@ -743,7 +745,7 @@ nav.toggled .menu-main-container li:last-of-type {
 10.0 Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 @h2-font-size;
 }
 
 /* Make sure select elements fit in widgets */
@@ -763,17 +765,17 @@ nav.toggled .menu-main-container li:last-of-type {
 11.1 Posts and pages
 --------------------------------------------------------------*/
 body.archive .page-header {
-	margin-bottom: 1.5em;
+	margin-bottom: @h2-font-size;
 }
 body.archive .page-header .taxonomy-description {
 	font-family: @header-fonts;
-	font-size: 1.5em;
+	font-size: @h2-font-size;
 }
 body.archive .page-header .taxonomy-description p {
 	padding-bottom: 0;
 }
 body.archive footer .tags-links a {
-    font-size: 0.8em;
+    font-size: @small-font-size;
     border: 1px solid #dadada;
     background-color: #fafafa;
     padding: 0 2px;
@@ -791,7 +793,7 @@ body.home {
 body.home section#primary,
 body.home section#secondary {
 	color: #ffffff;
-	margin-top: 2em;
+	margin-top: @h1-font-size;
 }
 body.home .hero-image {
 	margin-top: -1em;
@@ -816,7 +818,6 @@ body.home article img {
 	width: 100%;
 }
 body.home article#more-now {
-	height: vwidth;
 	text-align: center;
 }
 
@@ -825,7 +826,7 @@ body.single .entry-header {
 }
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 @h2-font-size;
 }
 .case-attributes {
     margin-bottom: 1em;
@@ -835,7 +836,7 @@ body.single .entry-header {
 	margin-bottom: 1em;
 }
 .case-attributes table {
-    font-size: 0.9em;
+    font-size: @small-font-size;
     color: #666;
 }
 .case-attributes table td {
@@ -853,7 +854,7 @@ body.single .entry-header {
 }
 .entry-content h3 {
     margin-bottom: 1em;
-		font-weight: bold;
+	font-weight: bold;
 }
 
 
@@ -878,7 +879,7 @@ body.single .entry-header {
 }
 .wp-caption {
 	border: 1px solid #ccc;
-	margin-bottom: 1.5em;
+	margin-bottom: @h2-font-size;
 	max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
@@ -890,10 +891,10 @@ body.single .entry-header {
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: @small-font-size 0;
 }
 .site-main .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: @h2-font-size;
 }
 .gallery-caption {
 }
@@ -952,7 +953,7 @@ iframe.twitter-timeline {
 	Small layout
 */
 @media screen and (min-width: (@8cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#page, body > header, #masthead, #content, #colophon {
 		width: @8cols;
 	}
 	body.home section#secondary article {
@@ -970,7 +971,11 @@ iframe.twitter-timeline {
         margin-right: 0;
     }
 	body.home section#secondary article#more-now header {
-		margin: (@2cols * (@em - 1.15) * 1px) 0;
+		height: 100%;
+		padding: 25%;
+	}
+	body.home section#secondary article#more-now header h1 {
+		line-height: 3;
 	}
 }
 
@@ -979,9 +984,12 @@ iframe.twitter-timeline {
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
 	h1 {
-		font-size: 3em;
+		font-size: @h1-font-size * 1.25;
 	}
-	#page, #masthead, #content, #colophon {
+	h2 {
+		font-size: @h2-font-size * 1.25;
+	}
+	#page, body > header, #masthead, #content, #colophon {
 		width: @12cols;
 	}
     .site-title {
@@ -1033,16 +1041,13 @@ iframe.twitter-timeline {
 	body.home section#secondary article:nth-of-type(3n) {
         margin-right: 0;
     }
-	body.home section#secondary article#more-now header {
-		margin: (@2cols * (@em - 1.15) * 1px) 0;
-	}
 }
 
 /*
 	Widescreen layout
 */
 @media screen and (min-width: (@16cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#page, body > header, #masthead, #content, #colophon {
 		width: @16cols;
 	}
     .site-title {
