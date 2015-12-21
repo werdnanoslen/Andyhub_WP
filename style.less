@@ -203,16 +203,16 @@ img {
     font-style: normal;
 }
 
-@body-fonts: 'Proxima Nova', sans-serif;
-@header-fonts: 'Roboto Slab', monospace;
+@body-fonts: 'Proxima Nova', 'Helvetica Neue', Helvetica, sans-serif;
+@header-fonts: 'Proxima Nova', 'Helvetica Neue', Helvetica, sans-serif;
 
 // Using major third scale (1.25)
 @body-font-size: 16;
 @em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
-@small-font-size: 0.75em;
+@small-font-size: 0.8em;
 @h3-font-size: 1em;
-@h2-font-size: 1.5em;
-@h1-font-size: 2em;
+@h2-font-size: 1.25em;
+@h1-font-size: 1.56em;
 
 body,
 button,
@@ -225,21 +225,20 @@ textarea {
 	line-height: 1.5;
 }
 h1, h2, h3 {
-	line-height: 1.5;
-}
-h1, h2 {
 	font-family: @header-fonts;
-	font-weight: 600;
+	line-height: 1.5;
 }
 h1 {
     font-size: @h1-font-size;
+	font-weight: 500;
 }
 h2 {
     font-size: @h2-font-size;
+	font-weight: 200;
 }
 h3 {
-	font-family: @body-fonts;
     font-size: @h3-font-size;
+	font-weight: 200;
 }
 p {
 	padding-bottom: @h2-font-size;
@@ -604,7 +603,7 @@ a {
 .menu-toggle {
 	cursor: pointer;
 	font-size: @h1-font-size;
-	line-height: @small-font-size;
+	line-height: 1em;
 	color: #adadad;
 	padding: 0;
 	display: none;
@@ -636,7 +635,7 @@ nav.toggled .menu-main-container {
     width: 100%;
     background-color: #fff;
     text-align: center;
-	top: 5.4em;
+	top: 4em + @body-font-size/@em;
 	z-index: 1;
 }
 nav.toggled .menu-main-container li {
