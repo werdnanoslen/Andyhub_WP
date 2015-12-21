@@ -645,6 +645,13 @@ nav.toggled .menu-main-container li {
     border-top: 1px solid #ddd;
 	font-weight: bold;
 }
+nav.toggled .menu-main-container li.current-menu-item {
+	background-color: #75B7BB;
+}
+nav.toggled .menu-main-container li.current-menu-item a {
+	border-bottom: none;
+	color: #ffffff;
+}
 nav.toggled .menu-main-container li:last-of-type {
     border-bottom: 1px solid #ddd;
 }
@@ -921,9 +928,6 @@ iframe.twitter-timeline {
 	}
 	nav.toggled .menu-main-container {
 		display: block;
-	}
-	#masthead .main-navigation .current-menu-item a {
-		border-bottom: none;
 	}
     .main-navigation {
         clear: none;
