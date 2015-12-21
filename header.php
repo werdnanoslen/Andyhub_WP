@@ -39,13 +39,11 @@ if ($posttags) {
 <body <?php body_class(); ?>>
 <header class="site-header" role="banner">
     <div id="masthead">
-        <div class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                <span id="blog_name"><?php bloginfo( 'name' ); ?></span>
-                <span id="blog_description"><?php bloginfo('description'); ?></span>
-            </a>
-        </div><nav id="site-navigation" class="main-navigation" role="navigation">
-            <h1 class="menu-toggle"><?php _e( '&#x2261;', 'andyhub_wp' ); ?></h1>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
+            <?php bloginfo( 'name' ); ?>
+        </a>
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle"><?php _e( '&#x2261;', 'andyhub_wp' ); ?></button>
             <a class="skip-link screen-reader-text" href="#content">
                 <?php _e( 'Skip to content', 'andyhub_wp' ); ?>
             </a>
