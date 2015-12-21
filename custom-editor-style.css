@@ -81,26 +81,23 @@
 
 body#tinymce.wp-editor {
     color: #404040;
-	font-family: 'Proxima Nova', sans-serif;
+	font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 }
 body#tinymce.wp-editor h1, h2, h3 {
-    font-family: 'Roboto Slab', monospace;
-    line-height: 1.15;
+    font-family: @header-fonts;
+	line-height: 1.5;
 }
 body#tinymce.wp-editor h1 {
-    font-family: 'Roboto Slab', monospace;
-    font-weight: bold;
-    font-size: 3em;
+    font-size: 1.56em;
+	font-weight: 500;
 }
 body#tinymce.wp-editor h2 {
-    font-family: 'Roboto Slab', monospace;
-    font-weight: normal;
-    font-size: 1.5em;
+    font-size: 1.25em;
+	font-weight: 200;
 }
 body#tinymce.wp-editor h3 {
-    font-family: 'Roboto Slab', monospace;
-    font-style: bold;
-    font-size: 1.5em;
+    ont-size: 1em;
+	font-weight: 200;
 }
