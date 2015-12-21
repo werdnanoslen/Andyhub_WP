@@ -129,7 +129,7 @@ img {
          url('fonts/proximanova/proximanovalight-webfont.woff') format('woff'),
          url('fonts/proximanova/proximanovalight-webfont.ttf') format('truetype'),
          url('fonts/proximanova/proximanovalight-webfont.svg#proxima_nova_ltlight') format('svg');
-    font-weight: lighter;
+    font-weight: 300;
     font-style: normal;
 }
 @font-face {
@@ -139,17 +139,7 @@ img {
          url('fonts/proximanova/proximanovaregular-webfont.woff') format('woff'),
          url('fonts/proximanova/proximanovaregular-webfont.ttf') format('truetype'),
          url('fonts/proximanova/proximanovaregular-webfont.svg#proxima_nova_rgregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Proxima Nova';
-    src: url('fonts/proximanova/proximanovabold-webfont.eot');
-    src: url('fonts/proximanova/proximanovabold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/proximanova/proximanovabold-webfont.woff') format('woff'),
-         url('fonts/proximanova/proximanovabold-webfont.ttf') format('truetype'),
-         url('fonts/proximanova/proximanovabold-webfont.svg#proxima_nova_rgbold') format('svg');
-    font-weight: bolder;
+    font-weight: 400;
     font-style: normal;
 }
 @font-face {
@@ -159,7 +149,17 @@ img {
          url('fonts/proximanova/proximanovasemibold-webfont.woff') format('woff'),
          url('fonts/proximanova/proximanovasemibold-webfont.ttf') format('truetype'),
          url('fonts/proximanova/proximanovasemibold-webfont.svg#proxima_nova_ltsemibold') format('svg');
-    font-weight: bold;
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/proximanova/proximanovabold-webfont.eot');
+    src: url('fonts/proximanova/proximanovabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/proximanova/proximanovabold-webfont.woff') format('woff'),
+         url('fonts/proximanova/proximanovabold-webfont.ttf') format('truetype'),
+         url('fonts/proximanova/proximanovabold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: 700;
     font-style: normal;
 }
 @font-face {
@@ -230,15 +230,15 @@ h1, h2, h3 {
 }
 h1 {
     font-size: @h1-font-size;
-	font-weight: 500;
+	font-weight: 600;
 }
 h2 {
     font-size: @h2-font-size;
-	font-weight: 200;
+	font-weight: 300;
 }
 h3 {
     font-size: @h3-font-size;
-	font-weight: 200;
+	font-weight: 300;
 }
 p {
 	padding-bottom: @h2-font-size;
