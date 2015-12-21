@@ -39,9 +39,11 @@ if ($posttags) {
 <body <?php body_class(); ?>>
 <header class="site-header" role="banner">
     <div id="masthead">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
-            <?php bloginfo( 'name' ); ?>
-        </a>
+        <div class="site-title <?php if (is_front_page()) echo 'current-menu-item'; ?>">
+            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                <?php bloginfo( 'name' ); ?>
+            </a>
+        </div>
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <button class="menu-toggle"><?php _e( '&#x2261;', 'andyhub_wp' ); ?></button>
             <a class="skip-link screen-reader-text" href="#content">
