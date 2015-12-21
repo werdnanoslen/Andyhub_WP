@@ -62,7 +62,7 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
             <?php endif; ?>
         </div>
 
-		<h2><?php if($post->post_excerpt) the_excerpt(); ?></h2>
+		<h2><?php if($post->post_excerpt) echo get_the_excerpt(); ?></h2>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
