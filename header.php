@@ -43,8 +43,7 @@ if ($posttags) {
             <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                 <?php bloginfo( 'name' ); ?>
             </a>
-        </div>
-        <nav id="site-navigation" class="main-navigation" role="navigation">
+        </div><nav id="site-navigation" class="main-navigation" role="navigation">
             <button class="menu-toggle"><?php _e( '&#x2261;', 'andyhub_wp' ); ?></button>
             <a class="skip-link screen-reader-text" href="#content">
                 <?php _e( 'Skip to content', 'andyhub_wp' ); ?>
