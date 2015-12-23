@@ -208,8 +208,10 @@ img {
 
 // Using major third scale (1.25)
 @body-font-size: 16;
+@body-line-height: 1.5;
 @em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
 @small-font-size: 0.8em;
+@header-line-height: 1.15;
 @h3-font-size: 1em;
 @h2-font-size: 1.25em;
 @h1-font-size: 1.56em;
@@ -222,11 +224,11 @@ textarea {
 	color: #404040;
 	font-family: @body-fonts;
 	font-size: @body-font-size*1px;
-	line-height: 1.5;
+	line-height: @body-line-height;
 }
 h1, h2, h3 {
 	font-family: @header-fonts;
-	line-height: 1.15;
+	line-height: @header-line-height;
 }
 h1 {
     font-size: @h1-font-size;
@@ -635,7 +637,7 @@ nav.toggled .menu-main-container {
     width: 100%;
     background-color: #fff;
     text-align: center;
-	top: 4em + @body-font-size/@em;
+	top: 2*@h1-font-size + @header-line-height;
 	z-index: 1;
 }
 nav.toggled .menu-main-container li {
