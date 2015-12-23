@@ -10,11 +10,16 @@ get_header(); ?>
     <img src="<?php bloginfo( 'template_url' ); ?>/img/civichero.png"
          alt="human-government interaction" class="hero-image"
     />
+
     <section id="primary" class="content-area">
         <main class="site-main" role="main">
-            <h1>I do <span style="color: #75B7BB">civic tech</span> & <span style="color: #75B7BB">service&nbsp;design</span></h1>
-            <h3>I'm currently researching the HCI aspects of civic media and urban computing. My goal is to understand how design and innovative technologies. could best be used to improve public services and opportunities for civic engagement. <a href="about">More&nbsp;about&nbsp;me...</a></h3>
-        </main><!-- #main -->
+            <?php
+                while (have_posts()) {
+                    the_post();
+                    get_template_part('content', 'page');
+                }
+            ?>
+        </main>
     </section>
 
     <section id="secondary" class="content-area">
@@ -28,7 +33,7 @@ get_header(); ?>
                 $posts_array = get_posts($args);
                 if (count($posts_array) > 0) :
             ?>
-                <h1>Things I'm doing right now:</h1>
+                <h1>I'm doing this right&nbsp;now:</h1>
                 <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
                         <article id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" rel="bookmark">
