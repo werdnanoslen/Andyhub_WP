@@ -810,7 +810,7 @@ body.home section a {
 	color: #ffffff;
 }
 body.home article {
-	margin-bottom: 3em;
+	margin-bottom: @gutter/@em;
 	position: relative;
 }
 body.home article img {
@@ -1021,33 +1021,12 @@ iframe.twitter-timeline {
     body.archive article:nth-of-type(2n) {
         margin-right: 0;
     }
-	body.single .entry-content > p,
-	body.single .entry-content > ul,
-	body.single .entry-content > ol,
-	body.single .entry-content > table,
-	body.page .entry-content > p,
-	body.page .entry-content > ul,
-	body.page .entry-content > ol,
-	body.page .entry-content > table {
-		line-height: 1.8;
-	}
     .case-attributes, .entry-content > aside {
 		margin-top: 0;
         margin-left: @gutter/@em;
         max-width: @6cols;
         float: right;
     }
-	body.home section#secondary article {
-		display: inline-block;
-		height: @4cols;
-        margin-right: 0.9em;
-		padding-bottom: 0.25em;
-		vertical-align: top;
-		width: @4cols;
-	}
-	body.home section#secondary article > a {
-		height: @4cols;
-	}
 	body.home section#secondary article:nth-of-type(2n) {
         margin-right: 0.9em;
     }
