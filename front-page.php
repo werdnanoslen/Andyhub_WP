@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-    <img src="<?php bloginfo( 'template_url' ); ?>/img/civichero.png"
+    <img src="<?php bloginfo( 'template_url' ); ?>/img/civichero.svg"
          alt="human-government interaction" class="hero-image"
     />
 
