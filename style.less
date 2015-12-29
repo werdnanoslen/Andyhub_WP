@@ -20,6 +20,7 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+0.0 - Variables
 1.0 - Reset
 2.0 - Typography
 3.0 - Elements
@@ -37,6 +38,20 @@ and Blueprint http://www.blueprintcss.org/
 	11.2 - Asides
 12.0 - Media
 --------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+0.0 - Variables
+--------------------------------------------------------------*/
+@black: #404040;
+@white: #ffffff;
+@lightestgrey: #eeeeee;
+@lightgrey: #cccccc;
+@grey: #adadad;
+@darkgrey: #666666;
+@midnightblue: #0e2232;
+@eveningblue: #3990a2;
+@middayblue: #72B7BC;
 
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -73,7 +88,7 @@ html {
 	box-sizing:         border-box;
 }
 body {
-	background: #fff;
+	background: @white;
 }
 article,
 aside,
@@ -221,7 +236,7 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
+	color: @black;
 	font-family: @body-fonts;
 	font-size: @body-font-size*1px;
 	line-height: @body-line-height;
@@ -259,7 +274,7 @@ address {
 	margin: 0 0 @h2-font-size;
 }
 pre {
-	background: #eee;
+	background: @lightestgrey;
 	font-family: "Lekton", monospace;
 	font-size: @body-font-size;
 	line-height: 1.6;
@@ -272,7 +287,7 @@ code, kbd, tt, var {
 	font: 15px "Lekton", monospace;
 }
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted @darkgrey;
 	cursor: help;
 }
 mark, ins {
@@ -304,7 +319,7 @@ big {
 3.0 Elements
 --------------------------------------------------------------*/
 hr {
-	background-color: #ccc;
+	background-color: @lightestgrey;
 	border: 0;
 	height: 1px;
 	margin-bottom: @h2-font-size;
@@ -356,10 +371,10 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid #ccc;
-	border-color: #ccc #ccc #bbb #ccc;
+	border: 1px solid @lightgrey;
+	border-color: @lightgrey;
 	border-radius: 3px;
-	background: #e6e6e6;
+	background: @lightestgrey;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
@@ -373,7 +388,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa #bbb;
+	border-color: @lightgrey;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 button:focus,
@@ -384,7 +399,7 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-	border-color: #aaa #bbb #bbb #bbb;
+	border-color: @lightgrey;
 	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 input[type="checkbox"],
@@ -411,8 +426,8 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
+	color: @darkgrey;
+	border: 1px solid @lightgrey;
 	border-radius: 3px;
 }
 input[type="text"]:focus,
@@ -421,7 +436,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-	color: #111;
+	color: @black;
 }
 input[type="text"],
 input[type="email"],
@@ -471,17 +486,25 @@ img#wpstats {
 
 .site-header,
 .site-footer {
-	background-color: #0e2232;
 	padding: @h1-font-size 0;
 }
 .site-header {
+	background-color: @midnightblue;
 	margin-bottom: 1em;
+}
+.site-footer {
+	background-color: @lightestgrey;
 }
 .site-header a,
 .site-footer a {
-    color: #adadad;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+.site-header a {
+	color: @grey;
+}
+.site-footer a {
+	color: @midnightblue;
 }
 
 header, #content, #page, #colophon, article[class*="category-"], .site-footer {
@@ -495,8 +518,8 @@ header, #content, #page, #colophon, article[class*="category-"], .site-footer {
 }
 
 #masthead .current-menu-item a {
-	border-bottom: 3px #75B7BB solid;
-	color: #75B7BB;
+	border-bottom: 3px @middayblue solid;
+	color: @middayblue;
 	padding-bottom: 2px;
 }
 
@@ -506,6 +529,7 @@ body.archive article {
 	margin-bottom: @h1-font-size;
 }
 
+body.archive .entry-content > h2,
 body.archive .entry-content > p,
 body.archive .entry-content > ul,
 body.archive .entry-content > ol,
@@ -529,7 +553,7 @@ body.archive article img {
 }
 
 footer.site-footer #colophon > * {
-	color: #ffffff;
+	color: @white;
 	padding-bottom: 1em;
 	text-align: center;
 	vertical-align: middle;
@@ -555,7 +579,7 @@ footer.site-footer ul {
 /*--------------------------------------------------------------
 6.1 Links
 --------------------------------------------------------------*/
-@link-color: #3990A2;
+@link-color: @eveningblue;
 
 a,
 a:hover,
@@ -626,7 +650,7 @@ a {
 	cursor: pointer;
 	font-size: @h1-font-size;
 	line-height: 1em;
-	color: #adadad;
+	color: @grey;
 	padding: 0;
 	display: none;
 	background: none;
@@ -655,7 +679,7 @@ nav.toggled .menu-main-container {
 	display: none;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: @white;
     text-align: center;
 	top: 2*@h1-font-size + @header-line-height;
 	z-index: 1;
@@ -667,12 +691,12 @@ nav.toggled .menu-main-container li {
 }
 nav.toggled .menu-main-container li.current-menu-item,
 nav.toggled .menu-main-container li:hover {
-	background-color: #75B7BB;
+	background-color: @middayblue;
 }
 nav.toggled .menu-main-container li.current-menu-item a,
 nav.toggled .menu-main-container li:hover a {
 	border-bottom: none;
-	color: #ffffff !important;
+	color: @white !important;
 }
 nav.toggled .menu-main-container li:last-of-type {
     border-bottom: 1px solid #ddd;
@@ -691,11 +715,11 @@ nav.toggled .menu-main-container li:last-of-type {
 .screen-reader-text:hover,
 .screen-reader-text:active,
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	background-color: @lightestgrey;
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	color: #21759b;
+	color: @eveningblue;
 	display: block;
 	font-size: 14px;
 	font-weight: bold;
@@ -796,24 +820,24 @@ body.archive .page-header .taxonomy-description p {
 }
 body.archive footer .tags-links a {
     font-size: @small-font-size;
-    border: 1px solid #dadada;
-    background-color: #fafafa;
+    border: 1px solid @lightestgrey;
+    background-color: @lightestgrey;
     padding: 0 2px;
     display: inline-block;
 }
 body.archive footer .tags-links a:hover {
     text-decoration: none;
     background-color: @link-color;
-    color: #fff;
+    color: @white;
 }
 
 body.home {
-	background-color: #0E2232;
+	background-color: @midnightblue;
 }
 body.home section#primary,
 body.home section#secondary,
 body.home .hero-image {
-	color: #ffffff;
+	color: @white;
 	padding: @h1-font-size 0;
 	width: 100%;
 }
@@ -823,10 +847,10 @@ body.home .hero-image {
 	width: 90%;
 }
 body.home section#secondary {
-	background-color: #72B7BC;
+	background-color: @middayblue;
 }
 body.home section#secondary article {
-	background-color: #72B7BC;
+	background-color: @middayblue;
 	margin-bottom: @gutter/@em;
 	position: relative;
 }
@@ -835,7 +859,7 @@ body.home section h1 {
 	text-transform: uppercase;
 }
 body.home section a {
-	color: #ffffff;
+	color: @white;
 }
 body.home article img {
 	vertical-align: middle;
@@ -876,7 +900,7 @@ body.single .entry-content h3 {
 }
 .case-attributes table {
     font-size: @small-font-size;
-    color: #666;
+    color: @darkgrey;
 }
 .case-attributes table td {
     border-bottom: 1px solid #ddd;
@@ -913,7 +937,7 @@ body.single .entry-content h3 {
 	padding: 0;
 }
 .wp-caption {
-	border: 1px solid #ccc;
+	border: 1px solid @lightgrey;
 	margin-bottom: @h2-font-size;
 	max-width: 100%;
 }
