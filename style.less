@@ -229,6 +229,7 @@ textarea {
 h1, h2, h3 {
 	font-family: @header-fonts;
 	line-height: @header-line-height;
+	margin-bottom: 1em;
 }
 h1 {
     font-size: @h1-font-size;
@@ -483,18 +484,13 @@ img#wpstats {
 	text-transform: uppercase;
 }
 
-#masthead, header, #content, #colophon, article[class*="category-"], .site-footer {
+header, #content, #page, #colophon, article[class*="category-"], .site-footer {
+	margin: 0 auto;
     width: 100%;
-    margin: 0 auto;
 }
 
-#page {
-    margin: 0 auto;
-    width: 90%;
-    position: relative;
-}
-
-#masthead {
+#masthead, .site-main {
+	margin: 0 auto;
 	width: 90%;
 }
 
@@ -815,27 +811,31 @@ body.home {
 	background-color: #0E2232;
 }
 body.home section#primary,
-body.home section#secondary {
+body.home section#secondary,
+body.home .hero-image {
 	color: #ffffff;
-	margin-top: @h1-font-size;
+	padding: @h1-font-size 0;
+	width: 100%;
 }
 body.home .hero-image {
-	margin-top: -1em;
+	display: block;
+	margin: -1em auto 0 auto;
+	width: 90%;
+}
+body.home section#secondary {
+	background-color: #72B7BC;
+}
+body.home section#secondary article {
+	background-color: #72B7BC;
+	margin-bottom: @gutter/@em;
+	position: relative;
 }
 body.home section h1 {
 	display: block;
-	padding-bottom: 0.25em;
 	text-transform: uppercase;
-}
-body.home section h3 {
-	margin: 0.75em 0;
 }
 body.home section a {
 	color: #ffffff;
-}
-body.home article {
-	margin-bottom: @gutter/@em;
-	position: relative;
 }
 body.home article img {
 	vertical-align: middle;
@@ -848,8 +848,12 @@ body.home article:not(#more-now) header {
 	background: rgba(0, 0, 0, 0.7);
 }
 body.home article#more-now {
+	margin-bottom: 0;
 	text-align: center;
 	text-decoration: underline;
+}
+body.home article#more-now h1 {
+	padding-bottom: 0;
 }
 
 body.single .entry-header {
@@ -886,10 +890,6 @@ body.single .entry-content h3 {
 }
 .case-attributes table tr:last-of-type td {
     border-bottom: none;
-}
-.entry-content h2,
-.entry-content h3 {
-	margin-bottom: 1em;
 }
 
 
@@ -988,7 +988,7 @@ iframe.twitter-timeline {
 	Small layout
 */
 @media screen and (min-width: (@8cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#masthead, body.home .hero-image, .site-main, #colophon {
 		width: @8cols;
 	}
 	body.home section#secondary article {
@@ -1043,7 +1043,7 @@ iframe.twitter-timeline {
 	h2 {
 		font-size: @h2-font-size * 1.25;
 	}
-	#page, #masthead, #content, #colophon {
+	#masthead, body.home .hero-image, .site-main, #colophon {
 		width: @12cols;
 	}
     .site-title {
@@ -1087,7 +1087,7 @@ iframe.twitter-timeline {
 	Widescreen layout
 */
 @media screen and (min-width: (@16cols + @gutter/@em)) {
-	#page, #masthead, #content, #colophon {
+	#masthead, body.home .hero-image, .site-main, #colophon {
 		width: @16cols;
 	}
     .site-title {
@@ -1124,14 +1124,7 @@ iframe.twitter-timeline {
     .case-attributes table {
         font-size: 1em;
     }
-	body.home .hero-image {
-		margin-top: 1em;
-	}
-	body.home section#primary,
-	body.home section#secondary {
-		margin-top: 4em;
-		margin-left: @2cols;
-		margin-right: @2cols;
+	body.home .site-main {
 		width: @12cols;
 	}
 
