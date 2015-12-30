@@ -1049,6 +1049,13 @@ iframe.twitter-timeline {
 		line-height: 5;
 	}
 
+    .case-attributes, .entry-content > aside {
+		margin-top: 0;
+		margin-left: @gutter/@em;
+		max-width: @4cols;
+		float: right;
+    }
+
 	footer.site-footer #colophon > * {
 		display: inline-block;
 		margin-right: 0.9em;
@@ -1101,10 +1108,7 @@ iframe.twitter-timeline {
         margin-right: 0;
     }
     .case-attributes, .entry-content > aside {
-		margin-top: 0;
-        margin-left: @gutter/@em;
         max-width: @6cols;
-        float: right;
     }
 	body.home section#secondary article:nth-of-type(2n) {
         margin-right: 0.9em;
@@ -1152,10 +1156,7 @@ iframe.twitter-timeline {
 		width: @10cols;
 	}
     .case-attributes, .entry-content > aside {
-		margin-top: inherit;
-        margin-left: @gutter/@em;
         max-width: @8cols;
-        float: right;
     }
     .case-attributes table {
         font-size: 1em;
