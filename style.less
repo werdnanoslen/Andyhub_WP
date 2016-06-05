@@ -244,7 +244,7 @@ textarea {
 h1, h2, h3 {
 	font-family: @header-fonts;
 	line-height: @header-line-height;
-	margin-bottom: 1em;
+	margin-bottom: 0.25em;
 }
 h1 {
     font-size: @h1-font-size;
@@ -529,14 +529,14 @@ body.archive article {
     vertical-align: top;
 	margin-bottom: @h1-font-size;
 }
-
-body.archive .entry-content > h2,
-body.archive .entry-content > p,
-body.archive .entry-content > ul,
-body.archive .entry-content > ol,
-body.archive .entry-content > table,
+body.archive article img,
+body.archive article h2,
+body.archive article p,
+body.archive article ul,
+body.archive article ol,
+body.archive article table,
 body.archive .entry-summary p {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.25em;
 }
 body.archive .entry-content p {
 	padding-bottom: 0;
@@ -550,7 +550,6 @@ body.archive .entry-content p {
 body.archive article img {
     max-width: 100%;
     display: block;
-    margin: 0 auto;
 }
 
 footer.site-footer #colophon > * {
