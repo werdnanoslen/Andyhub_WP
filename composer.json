@@ -1,4 +1,8 @@
 {
-    "name": "werdnanoslen/andyhub_wp",
-    "license": "GPL-2.0"
+    "license": "GPL-2.0",
+    "name": "werdnanoslen/andyhub_wp",    
+    "require": {
+        "composer/installers": "^1.0"
+    },
+    "type": "wordpress-plugin"
 }
