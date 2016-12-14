@@ -4,5 +4,5 @@
     "require": {
         "composer/installers": "^1.0"
     },
-    "type": "wordpress-plugin"
+    "type": "wordpress-theme"
 }
