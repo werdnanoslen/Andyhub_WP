@@ -52,7 +52,7 @@ get_header(); ?>
                 <article id="more-now">
                     <header class="entry-header">
                         <h1 class="entry-title">
-                            <a href="projects" rel="bookmark">More</a>
+                            <a href="work" rel="bookmark">More</a>
                         </h1>
                     </header><!-- .entry-hfeader -->
                 </article>
