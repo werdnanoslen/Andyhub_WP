@@ -78,6 +78,8 @@ function andyhub_wp_setup() {
 		'default-image' => get_template_directory_uri() . '/img/civichero.svg',
 	);
 	add_theme_support( 'custom-header', $args );
+
+	add_theme_support( 'post-thumbnails' ); 
 }
 endif; // andyhub_wp_setup
 add_action( 'after_setup_theme', 'andyhub_wp_setup' );

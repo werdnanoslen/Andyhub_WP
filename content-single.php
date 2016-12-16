@@ -2,7 +2,11 @@
 /**
  * @package Andyhub_WP
  */
-$excerpt_image = get_post_custom_values('excerpt_image')[0];
+if ( has_post_thumbnail() ) {
+        $img = the_post_thumbnail_url();
+} else if ( get_post_custom_values('excerpt_image')[0] ) {
+        $img = get_post_custom_values('excerpt_image')[0];
+}
 $client = get_post_custom_values('client')[0];
 $dates = get_post_custom_values('dates')[0];
 $tags = get_the_tag_list('',', ','');
@@ -20,13 +24,13 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
 	<div class="entry-content">
         <div class="case-attributes">
             <?php if ($hasCaseAttributes): ?>
-            <?php if ($excerpt_image): ?>
+            <?php if ($img): ?>
 				<?php if ($url): ?>
 					<a href="<?php echo $url; ?>">
-						<img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+						<img src="<?php echo $img; ?>" alt="<?php the_title(); ?>" class="size-full" />
 					</a>
 				<?php else: ?>
-					<img src="<?php echo $excerpt_image; ?>" alt="<?php the_title(); ?>" class="size-full" />
+					<img src="<?php echo $img; ?>" alt="<?php the_title(); ?>" class="size-full" />
 				<?php endif; ?>
             <?php endif; ?>
             <table>

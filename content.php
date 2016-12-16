@@ -2,8 +2,11 @@
 /**
  * @package Andyhub_WP
  */
-
-$img = get_post_custom_values('excerpt_image')[0];
+if ( has_post_thumbnail() ) {
+	$img = the_post_thumbnail_url('medium');
+} else if ( get_post_custom_values('excerpt_image')[0] ) {
+	$img = get_post_custom_values('excerpt_image')[0];
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
