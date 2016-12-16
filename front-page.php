@@ -36,7 +36,7 @@ get_header(); ?>
                             <a href="<?php the_permalink(); ?>" rel="bookmark">
                                 <?php
 				if ( has_post_thumbnail() ) {
-       					$img = get_the_post_thumbnail_url('medium');
+       					$img = get_the_post_thumbnail_url(get_the_ID(), 'medium');
 				} else if ( get_post_custom_values('excerpt_image')[0] ) {
       					$img = get_post_custom_values('excerpt_image')[0];
 				} else {
