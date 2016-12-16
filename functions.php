@@ -50,7 +50,7 @@ function andyhub_wp_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -78,8 +78,6 @@ function andyhub_wp_setup() {
 		'default-image' => get_template_directory_uri() . '/img/civichero.svg',
 	);
 	add_theme_support( 'custom-header', $args );
-
-	add_theme_support( 'post-thumbnails' ); 
 }
 endif; // andyhub_wp_setup
 add_action( 'after_setup_theme', 'andyhub_wp_setup' );
