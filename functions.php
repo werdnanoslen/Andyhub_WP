@@ -68,6 +68,16 @@ function andyhub_wp_setup() {
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form', ) );
+
+	// Enable custom header image in theme customization menu
+	$args = array(
+//		'flex-height'   => true,
+//		'flex-width'    => true,
+//		'height'	=> 960,
+//		'width'		=> 960,
+		'default-image' => get_template_directory_uri() . '/img/civichero.svg',
+	);
+	add_theme_support( 'custom-header', $args );
 }
 endif; // andyhub_wp_setup
 add_action( 'after_setup_theme', 'andyhub_wp_setup' );

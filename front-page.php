@@ -6,10 +6,7 @@
  */
 
 get_header(); ?>
-
-    <img src="<?php bloginfo( 'template_url' ); ?>/img/civichero.svg"
-         alt="human-government interaction" class="hero-image"
-    />
+    <img src="<?php header_image();?>" alt="header image" class="hero-image" />
 
     <section id="primary" class="content-area">
         <main class="site-main" role="main">
