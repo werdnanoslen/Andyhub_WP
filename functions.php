@@ -160,3 +160,13 @@ function andyhub_rss2_item() {
         }
     }
 }
+
+/**
+ * Allow particular file types to be uploaded
+ */
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
+function my_myme_types($mime_types){
+    $mime_types['svg'] = 'image/svg+xml';
+    $mime_types['woff'] = 'application/font-woff';
+    return $mime_types;
+}
