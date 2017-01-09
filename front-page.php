@@ -25,6 +25,7 @@ get_header(); ?>
                 $args = array(
                     'category_name'    => 'Now',
                     'post_status'      => 'publish',
+                    'posts_per_page'   => -1,
                     'suppress_filters' => true
                 );
                 $posts_array = get_posts($args);
