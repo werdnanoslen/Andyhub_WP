@@ -35,10 +35,7 @@ if ( post_password_required() ) {
 
 		<div class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'div',
-					'short_ping' => true,
-				) );
+				wp_list_comments( 'type=comment&callback=mytheme_comment' );
 			?>
 		</div><!-- .comment-list -->
 

@@ -170,3 +170,32 @@ function my_myme_types($mime_types){
     $mime_types['woff'] = 'application/font-woff';
     return $mime_types;
 }
+
+/**
+ * Custom comment theme
+ */
+function mytheme_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) : ?>
+    <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <?php endif; ?>
+        <div class="comment-meta commentmetadata">
+            <h3><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
+                <?php printf( __('%1$s'), get_comment_date() ); ?>
+            </a></h3>
+        </div>
+
+        <?php comment_text(); ?> <?php edit_comment_link( __( '(Edit)' ), '  ', '' );?>
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+    <?php
+}
