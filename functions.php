@@ -175,13 +175,8 @@ function my_myme_types($mime_types){
  * Custom comment theme
  */
 function mytheme_comment($comment, $args, $depth) {
-    if ( 'div' === $args['style'] ) {
-        $tag       = 'div';
-        $add_below = 'comment';
-    } else {
-        $tag       = 'li';
-        $add_below = 'div-comment';
-    }
+    $tag       = 'div';
+    $add_below = 'comment';
     ?>
     <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
     <?php if ( 'div' != $args['style'] ) : ?>
