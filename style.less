@@ -4,8 +4,6 @@ Theme Name: Andyhub_WP
 Theme URI: https://github.com/werdnanoslen/Andyhub_WP
 Author: Andrew Nelson
 Author URI: http://andyhub.com/
-Version: 1.0
-License: GNU General Public License
 License URI: LICENSE.txt
 Text Domain: andyhub_wp
 
@@ -43,15 +41,27 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 0.0 - Variables
 --------------------------------------------------------------*/
-@black: #404040;
+@black: #333333;
 @white: #ffffff;
 @lightestgrey: #eeeeee;
 @lightgrey: #cccccc;
-@grey: #adadad;
+@grey: #8F8F8F;
 @darkgrey: #666666;
 @midnightblue: #0e2232;
 @eveningblue: #3990a2;
 @middayblue: #72B7BC;
+
+@body-fonts: 'Charter', Georgia, serif;
+@header-fonts: 'Proxima Nova', 'Helvetica Neue', Helvetica, sans-serif;
+
+@body-font-size: 18;
+@body-line-height: 1.58;
+@em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
+@small-font-size: 0.8em;
+@header-line-height: 1.15;
+@h3-font-size: 1.22em;
+@h2-font-size: 1.28em;
+@h1-font-size: 1.78em;
 
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -220,52 +230,39 @@ img {
 
 @font-face {
     font-family: 'Charter';
-    src: url('fonts/charter/charter_bold_italic-webfont.eot');
-    src: url('fonts/charter/charter_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/charter/charter_bold_italic-webfont.woff') format('woff');
+    src: url('fonts/charter/webfonts/charter_bold_italic-webfont.eot');
+    src: url('fonts/charter/webfonts/charter_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/charter/webfonts/charter_bold_italic-webfont.woff') format('woff');
     font-weight: bold;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Charter';
-    src: url('fonts/charter/charter_bold-webfont.eot');
-    src: url('fonts/charter/charter_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/charter/charter_bold-webfont.woff') format('woff');
+    src: url('fonts/charter/webfonts/charter_bold-webfont.eot');
+    src: url('fonts/charter/webfonts/charter_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/charter/webfonts/charter_bold-webfont.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Charter';
-    src: url('fonts/charter/charter_italic-webfont.eot');
-    src: url('fonts/charter/charter_italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/charter/charter_italic-webfont.woff') format('woff');
+    src: url('fonts/charter/webfonts/charter_italic-webfont.eot');
+    src: url('fonts/charter/webfonts/charter_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/charter/webfonts/charter_italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 }
 
 @font-face {
     font-family: 'Charter';
-    src: url('fonts/charter/charter_regular-webfont.eot');
-    src: url('fonts/charter/charter_regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/charter/charter_regular-webfont.woff') format('woff');
+    src: url('fonts/charter/webfonts/charter_regular-webfont.eot');
+    src: url('fonts/charter/webfonts/charter_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/charter/webfonts/charter_regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-
-@body-fonts: 'Charter', Georgia, serif;
-@header-fonts: 'Proxima Nova', 'Helvetica Neue', Helvetica, sans-serif;
-
-// Using major third scale (1.25)
-@body-font-size: 16;
-@body-line-height: 1.5;
-@em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
-@small-font-size: 0.8em;
-@header-line-height: 1.15;
-@h3-font-size: 1em;
-@h2-font-size: 1.25em;
-@h1-font-size: 1.56em;
 
 body,
 button,
@@ -284,7 +281,7 @@ h1, h2, h3 {
 }
 h1 {
     font-size: @h1-font-size;
-	font-weight: 600;
+	font-weight: 700;
 }
 h2 {
     font-size: @h2-font-size;
@@ -523,6 +520,7 @@ img#wpstats {
 .site-header,
 .site-footer {
 	padding: @h1-font-size 0;
+    font-family: @header-fonts;
 }
 .site-header {
 	background-color: @midnightblue;
@@ -890,7 +888,6 @@ body.home section#secondary article {
 }
 body.home section h1 {
 	display: block;
-	text-transform: uppercase;
 }
 body.home section a {
 	color: @white;
@@ -921,8 +918,12 @@ body.single .entry-header,
 body.single h2 {
     margin-bottom: 1em;
 }
+body.single h2 {
+    font-weight: 400;
+    color: @grey;
+}
 body.single h3 {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .page-links {
@@ -1117,12 +1118,24 @@ iframe.twitter-timeline {
 	Medium layout
 */
 @media screen and (min-width: (@12cols + @gutter/@em)) {
+    p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+        font-size: (@body-font-size * 1.167) * 1px;
+    }
 	h1 {
 		font-size: @h1-font-size * 1.25;
 	}
 	h2 {
-		font-size: @h2-font-size * 1.25;
+		font-size: @h2-font-size * 1.17;
 	}
+    h3 {
+        font-size: @h3-font-size * 1.09;
+    }
 	#masthead, body.home .hero-image, .site-main, #colophon {
 		width: @12cols;
 	}
