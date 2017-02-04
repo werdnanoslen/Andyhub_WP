@@ -609,6 +609,10 @@ footer.site-footer ul {
 	padding: 0;
 }
 
+#twitter-widget-0 {
+    width: 100% !important;
+}
+
 /*--------------------------------------------------------------
 6.0 Navigation
 --------------------------------------------------------------*/
@@ -1094,13 +1098,6 @@ iframe.twitter-timeline {
 		line-height: 5;
 	}
 
-    .case-attributes, .entry-content > aside {
-		margin-top: 0;
-		margin-left: @gutter/@em;
-		max-width: @4cols;
-		float: right;
-    }
-
 	footer.site-footer #colophon > * {
 		display: inline-block;
 		margin-right: 0.8em;
@@ -1164,10 +1161,6 @@ iframe.twitter-timeline {
     body.archive article:nth-of-type(3n) {
         margin-right: 0;
     }
-    .case-attributes, .entry-content > aside {
-        max-width: @6cols;
-        margin-left: 2*@gutter/@em;
-    }
 	body.home section#secondary article:nth-of-type(2n) {
         margin-right: 0.8em;
     }
@@ -1207,19 +1200,10 @@ iframe.twitter-timeline {
     body.archive article:nth-of-type(4n) {
         margin-right: 0;
     }
-	body.single .entry-content > p,
-	body.single .entry-content > ul,
-	body.single .entry-content > ol,
-	body.single .entry-content > table,
-	body.page .entry-content > p,
-	body.page .entry-content > ul,
-	body.page .entry-content > ol,
-	body.page .entry-content > table {
-		line-height: inherit;
-		width: @10cols;
-	}
-    .case-attributes, .entry-content > aside {
-        max-width: @8cols;
+    body.page article,
+	body.single article {
+        width: @10cols;
+        margin: 0 auto;
     }
 	body.home .site-main {
 		width: @12cols;
