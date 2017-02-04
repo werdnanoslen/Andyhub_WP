@@ -937,13 +937,19 @@ body.single h3 {
 	clear: both;
 	margin: 0 0 @h2-font-size;
 }
+.excerpt_image {
+	margin-bottom: 1em;
+    text-align: center;
+	width: 100%;
+}
+.excerpt_image img {
+    margin: 0 auto;
+    max-height: @8cols;
+    width: auto;
+}
 .case-attributes {
     margin-bottom: 1em;
     max-width: 100%;
-}
-.case-attributes img {
-	margin-bottom: 1em;
-	width: 100%;
 }
 .case-attributes table {
     font-size: @small-font-size;
@@ -1200,8 +1206,8 @@ iframe.twitter-timeline {
     body.archive article:nth-of-type(4n) {
         margin-right: 0;
     }
-    body.page article,
-	body.single article {
+    body.single article .entry-header,
+    body.single article .entry-content {
         width: @10cols;
         margin: 0 auto;
     }

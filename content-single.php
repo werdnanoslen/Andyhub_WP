@@ -18,21 +18,18 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
 	<?php if (!is_front_page()) : //Don't show title on Home page ?>
         <header class="entry-header">
             <h1 class="entry-title"><?php the_title(); ?></h1>
+            <h2><?php if($post->post_excerpt) echo get_the_excerpt(); ?></h2>
         </header><!-- .entry-header -->
+        <?php if ($img): ?>
+            <div class="excerpt_image">
+                <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>"/>
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
 
 	<div class="entry-content">
         <div class="case-attributes">
             <?php if ($hasCaseAttributes): ?>
-            <?php if ($img): ?>
-				<?php if ($url): ?>
-					<a href="<?php echo $url; ?>">
-						<img src="<?php echo $img; ?>" alt="<?php the_title(); ?>" class="size-full" />
-					</a>
-				<?php else: ?>
-					<img src="<?php echo $img; ?>" alt="<?php the_title(); ?>" class="size-full" />
-				<?php endif; ?>
-            <?php endif; ?>
             <table>
                 <?php if ($client): ?>
                 <tr>
@@ -66,7 +63,6 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
             <?php endif; ?>
         </div>
 
-		<h2><?php if($post->post_excerpt) echo get_the_excerpt(); ?></h2>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
