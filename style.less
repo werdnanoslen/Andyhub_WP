@@ -57,9 +57,10 @@ and Blueprint http://www.blueprintcss.org/
 @body-font-size: 18;
 @body-line-height: 1.58;
 @em: @body-font-size*1em;	// Shorthand for outputting ems, e.g. "12/@em"
-@small-font-size: 0.8em;
+@small-font-size: 0.78em;
 @header-line-height: 1.15;
-@h3-font-size: 1.22em;
+@h4-font-size: 1.22em;
+@h3-font-size: 1.56em;
 @h2-font-size: 1.28em;
 @h1-font-size: 1.78em;
 
@@ -188,47 +189,6 @@ img {
     font-style: normal;
 }
 @font-face {
-    font-family: 'Roboto Slab';
-    src: url('fonts/robotoslab/RobotoSlab-Bold-webfont.eot');
-    src: url('fonts/robotoslab/RobotoSlab-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/robotoslab/RobotoSlab-Bold-webfont.woff') format('woff'),
-         url('fonts/robotoslab/RobotoSlab-Bold-webfont.ttf') format('truetype'),
-         url('fonts/robotoslab/RobotoSlab-Bold-webfont.svg#roboto_slabbold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('fonts/robotoslab/RobotoSlab-Light-webfont.eot');
-    src: url('fonts/robotoslab/RobotoSlab-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/robotoslab/RobotoSlab-Light-webfont.woff') format('woff'),
-         url('fonts/robotoslab/RobotoSlab-Light-webfont.ttf') format('truetype'),
-         url('fonts/robotoslab/RobotoSlab-Light-webfont.svg#roboto_slablight') format('svg');
-    font-weight: lighter;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('fonts/robotoslab/RobotoSlab-Regular-webfont.eot');
-    src: url('fonts/robotoslab/RobotoSlab-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/robotoslab/RobotoSlab-Regular-webfont.woff') format('woff'),
-         url('fonts/robotoslab/RobotoSlab-Regular-webfont.ttf') format('truetype'),
-         url('fonts/robotoslab/RobotoSlab-Regular-webfont.svg#roboto_slabregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Roboto Slab';
-    src: url('fonts/robotoslab/RobotoSlab-Thin-webfont.eot');
-    src: url('fonts/robotoslab/RobotoSlab-Thin-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/robotoslab/RobotoSlab-Thin-webfont.woff') format('woff'),
-         url('fonts/robotoslab/RobotoSlab-Thin-webfont.ttf') format('truetype'),
-         url('fonts/robotoslab/RobotoSlab-Thin-webfont.svg#roboto_slabthin') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'Charter';
     src: url('fonts/charter/webfonts/charter_bold_italic-webfont.eot');
     src: url('fonts/charter/webfonts/charter_bold_italic-webfont.eot?#iefix') format('embedded-opentype'),
@@ -274,22 +234,26 @@ textarea {
 	font-size: @body-font-size*1px;
 	line-height: @body-line-height;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: @header-fonts;
 	line-height: @header-line-height;
 	margin-bottom: 0.25em;
 }
 h1 {
     font-size: @h1-font-size;
-	font-weight: 700;
+	font-weight: bold;
 }
 h2 {
     font-size: @h2-font-size;
-	font-weight: 300;
+	font-weight: normal;
 }
 h3 {
     font-size: @h3-font-size;
-	font-weight: 300;
+	font-weight: normal;
+}
+h4 {
+    font-size: @h4-font-size;
+    font-weight: bold;
 }
 p {
 	padding-bottom: @h2-font-size;
@@ -1016,6 +980,9 @@ body.single h3 {
 	max-width: 98%;
 }
 .wp-caption-text {
+    color: @grey;
+    font-family: @header-fonts;
+    font-size: @small-font-size;
 	text-align: center;
 }
 .wp-caption .wp-caption-text {
