@@ -905,8 +905,16 @@ body.home section a {
 	color: @white;
 }
 body.home article img {
-	vertical-align: middle;
-	width: 100%;
+	max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 body.home article:not(#more-now) header {
 	position: absolute;
@@ -1120,7 +1128,7 @@ iframe.twitter-timeline {
 	body.home section#secondary article > a {
 		display: block;
 		height: @3cols;
-		overall: hidden;
+		position: relative;
 		text-decoration: none;
 	}
 	body.home section#secondary article > a:hover	{
