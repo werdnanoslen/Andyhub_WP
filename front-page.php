@@ -53,9 +53,9 @@ get_header(); ?>
                             </a>
 
                             <header class="entry-header">
-                                <h2 class="entry-title">
+                                <h4 class="entry-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-                                </h2>
+                                </h4>
                             </header><!-- .entry-hfeader -->
                         </article><!-- #post-## -->
                 <?php endforeach;
