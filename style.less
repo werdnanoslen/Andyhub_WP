@@ -912,7 +912,10 @@ body.home article:not(#more-now) header {
 	position: absolute;
 	bottom: 0;
 	text-align: center;
-	background: rgba(0, 0, 0, 0.7);
+}
+body.home article:not(#more-now) header a {
+	color: @black;
+	text-decoration: none;
 }
 body.home section#secondary article#more-now {
 	background-color: transparent;
@@ -1109,13 +1112,16 @@ iframe.twitter-timeline {
 	body.home section#secondary article {
 		display: inline-block;
 		height: @4cols;
-        margin-right: 0.8em;
-		padding-bottom: 0.25em;
+        margin-right: 8em;
+		margin-bottom: 4em;
 		vertical-align: top;
-		width: @4cols;
+		width: @3cols;
 	}
 	body.home section#secondary article > a {
-		height: @4cols;
+		display: block;
+		height: @3cols;
+		overall: hidden;
+		text-decoration: none;
 	}
 	body.home section#secondary article > a:hover	{
 		text-decoration: none;
@@ -1194,8 +1200,11 @@ iframe.twitter-timeline {
     body.archive article:nth-of-type(3n) {
         margin-right: 0;
     }
+	body.home section#secondary article {
+        margin-right: 6.5em;
+	}
 	body.home section#secondary article:nth-of-type(2n) {
-        margin-right: 0.8em;
+        margin-right: 6.5em;
     }
 	body.home section#secondary article:nth-of-type(3n) {
         margin-right: 0;
