@@ -11,6 +11,11 @@
         <header class="entry-header">
             <h1 class="entry-title"><?php the_title(); ?></h1>
         </header><!-- .entry-header -->
+        <?php if ($img): ?>
+            <div class="excerpt_image">
+                <img src="<?php echo $img; ?>" alt="<?php the_title(); ?>"/>
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
 
 	<div class="entry-content">
