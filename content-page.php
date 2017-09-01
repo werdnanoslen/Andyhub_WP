@@ -4,6 +4,11 @@
  *
  * @package Andyhub_WP
  */
+ if ( has_post_thumbnail() ) {
+     $img = get_the_post_thumbnail_url();
+ } else if ( get_post_custom_values('excerpt_image')[0] ) {
+     $img = get_post_custom_values('excerpt_image')[0];
+ }
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
