@@ -896,6 +896,7 @@ body.home section#secondary article {
 	margin-bottom: @gutter/@em;
 	position: relative;
 	overflow: hidden;
+    text-align: center;
 }
 body.home section h1 {
 	display: block;
@@ -909,7 +910,6 @@ body.home article img {
     max-width: 100%;
     width: auto;
     height: auto;
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -917,7 +917,6 @@ body.home article img {
     margin: auto;
 }
 body.home article header {
-	position: absolute;
 	bottom: 0;
 	text-align: center;
 }
@@ -1111,6 +1110,12 @@ iframe.twitter-timeline {
         width: 100%;
     }
 
+    body.home article img {
+        position: absolute;
+    }
+    body.home article header {
+    	position: absolute;
+    }
 	body.home section#secondary article {
 		display: inline-block;
 		height: @4cols;
