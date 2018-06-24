@@ -3,7 +3,7 @@
  * @package Andyhub_WP
  */
 if ( has_post_thumbnail() ) {
-	$img = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+	$img = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
 } else if ( get_post_custom_values('excerpt_image')[0] ) {
 	$img = get_post_custom_values('excerpt_image')[0];
 }
