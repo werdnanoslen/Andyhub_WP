@@ -13,11 +13,6 @@
 
 <footer class="site-footer" role="contentinfo">
 	<div id="colophon">
-		<p><a href="<?php echo get_page_link(get_page_by_title('about')->ID); ?>#copyright">
-			<img src="<?php bloginfo('template_url'); ?>/img/copyleft.svg" title="copyleft" alt="&copy;" />
-		</a></p>
-		<div>
-		</div>
 		<div>
 			<ul>
 				<li>
