@@ -39,7 +39,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo get_page_link(get_page_by_title('contact')->ID); ?>">
+					<a href="<?php echo get_page_link(get_page_by_title('Contact &amp; Availability')->ID); ?>">
 						<img src="<?php bloginfo('template_url'); ?>/img/email.svg"
 								alt="email" title="email" />
 					</a>
