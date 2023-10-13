@@ -23,7 +23,7 @@ get_header(); ?>
         <main class="site-main" role="main">
             <?php
                 $args = array(
-                    'category_name'    => 'Now',
+                    'category_name'    => 'Featured',
                     'post_status'      => 'publish',
                     'posts_per_page'   => -1,
                     'suppress_filters' => true
@@ -31,7 +31,7 @@ get_header(); ?>
                 $posts_array = get_posts($args);
                 if (count($posts_array) > 0) :
             ?>
-                <h1>I'm doing this right&nbsp;now:</h1>
+                <h1>Featured work</h1>
                 <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
                         <article id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" rel="bookmark">
