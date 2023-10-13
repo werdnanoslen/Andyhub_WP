@@ -66,9 +66,9 @@ get_header(); ?>
                 ?>
                 <article id="more-now">
                     <header class="entry-header">
-                        <h1 class="entry-title">
+                        <h2 class="entry-title">
                             <a href="work" rel="bookmark">More</a>
-                        </h1>
+                        </h2>
                     </header><!-- .entry-hfeader -->
                 </article>
             <?php endif; ?>
