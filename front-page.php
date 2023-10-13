@@ -64,13 +64,6 @@ get_header(); ?>
                 <?php endforeach;
                     wp_reset_postdata();
                 ?>
-                <article id="more-now">
-                    <header class="entry-header">
-                        <h2 class="entry-title">
-                            <a href="work" rel="bookmark">More</a>
-                        </h2>
-                    </header><!-- .entry-hfeader -->
-                </article>
             <?php endif; ?>
         </main><!-- #main -->
     </section>
