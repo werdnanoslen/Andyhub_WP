@@ -40,6 +40,7 @@ get_header(); ?>
                                 <?php
 				if ( has_post_thumbnail() ) {
        					$img = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+					$alt = get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE);
 				} else if ( get_post_custom_values('excerpt_image')[0] ) {
       					$img = get_post_custom_values('excerpt_image')[0];
 				} else {
@@ -51,7 +52,7 @@ get_header(); ?>
 				        $img = "https://dummyimage.com/300x300/$bgColor/$fgColor/&text=" . get_the_title();
 				}
 				?>
-				<img src="<?php echo $img ?>" alt="" role="presentation" />
+				<img src="<?php echo $img ?>" alt="<?php echo $alt ?>" />
                             </a>
 
                             <header class="entry-header">
