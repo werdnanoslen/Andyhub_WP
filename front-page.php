@@ -51,7 +51,7 @@ get_header(); ?>
 				        $img = "https://dummyimage.com/300x300/$bgColor/$fgColor/&text=" . get_the_title();
 				}
 				?>
-				<img src="<?php echo $img ?>" alt="<?php the_title(); ?>" />
+				<img src="<?php echo $img ?>" alt="" />
                             </a>
 
                             <header class="entry-header">
