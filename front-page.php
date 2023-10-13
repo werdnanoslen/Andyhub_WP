@@ -6,7 +6,9 @@
  */
 
 get_header(); ?>
-    <img src="<?php header_image();?>" class="hero-image" />
+    <?php if ( header_image() ) : ?>
+        <img src="<?php header_image();?>" class="hero-image" />
+    <?php endif; ?>
 
     <section id="primary" class="content-area">
         <main class="site-main" role="main">
