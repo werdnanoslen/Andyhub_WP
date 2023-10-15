@@ -1280,13 +1280,13 @@ iframe.twitter-timeline {
 	}
 
 	body.page-template-wide-page {
-		main {
+		main, .entry-content {
 			width: 100% !important;
-			article .entry-header,
-			article .entry-content > p,
-			article .entry-content > div *	{
+			.entry-header,
+			.entry-content > p,
+			.entry-content > div *	{
 				margin: 0 auto;
-				width: 90%;
+				width: @16cols;
 			}
 		}
 	}
