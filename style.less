@@ -1279,6 +1279,16 @@ iframe.twitter-timeline {
 		width: @12cols;
 	}
 
+	body.page-template-wide-page {
+		main {
+			width: 100% !important;
+			article .entry-header,
+			article .entry-content > p,
+			article .entry-content > div *	{
+				.site-main !important
+			}
+		}
+	}
 
     footer.site-footer #colophon > * {
         width: @5cols;
