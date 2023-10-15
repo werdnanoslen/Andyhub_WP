@@ -1286,10 +1286,12 @@ iframe.twitter-timeline {
 				margin: 0 auto !important;
 				width: @16cols !important;
 			}
-			.entry-content > p,
-			.entry-content > div * {
+			.entry-content > p {
 				margin: 0 auto !important;
 				width: @14cols - @gutter/@em !important;
+			}
+			.entry-content > div {
+				padding: 0 (@14cols - @gutter/@em)/2;
 			}
 		}
 	}
