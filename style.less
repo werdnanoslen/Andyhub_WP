@@ -1282,11 +1282,14 @@ iframe.twitter-timeline {
 	body.page-template-wide-page {
 		main, .entry-content {
 			width: 100% !important;
-			.entry-header,
-			.entry-content > p,
-			.entry-content > div *	{
+			.entry-header {
 				margin: 0 auto !important;
 				width: @16cols !important;
+			}
+			.entry-content > p,
+			.entry-content > div * {
+				margin: 0 auto !important;
+				width: @14cols - @gutter/@em !important;
 			}
 		}
 	}
