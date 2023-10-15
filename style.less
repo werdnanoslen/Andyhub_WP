@@ -1288,7 +1288,12 @@ iframe.twitter-timeline {
 			.entry-content > p,
 			.entry-content > div {
 				margin: 0 auto !important;
-				width: @16cols !important;
+			}
+			.entry-content > p {
+				width: @14cols - @gutter/@em !important;
+			}
+			.entry-content > div {
+				width: @16cols + 8em - @gutter/@em !important;
 			}
 		}
 	}
