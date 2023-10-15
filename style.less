@@ -1281,6 +1281,9 @@ iframe.twitter-timeline {
 	body.page-template-wide-page {
 		main, .entry-content {
 			width: 100% !important;
+			.wp-block-media-text .wp-block-media-text__content {
+				padding: 0 3em;
+			}
 			.entry-header {
 				margin: 0 auto !important;
 				width: @16cols !important;
@@ -1293,7 +1296,7 @@ iframe.twitter-timeline {
 				width: @14cols - @gutter/@em !important;
 			}
 			.entry-content > div {
-				width: @16cols + 8em - @gutter/@em !important;
+				width: @16cols + 6em !important;
 			}
 		}
 	}
