@@ -33,7 +33,7 @@ get_header(); ?>
                 $posts_array = get_posts($args);
                 if (count($posts_array) > 0) :
             ?>
-                <h1>Featured work</h1>
+                <h1><a href="/contact">Contact me</a> about...</h1>
                 <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
                         <article id="post-<?php the_ID(); ?>">
                             <a href="<?php the_permalink(); ?>" rel="bookmark">
