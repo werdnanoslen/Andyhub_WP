@@ -31,7 +31,7 @@ get_header(); ?>
                 $posts_array = get_pages($args); 
                 if (count($posts_array) > 0) :
             ?>
-                <h1><a href="/contact">Contact me</a> about...</h1>
+                <h2><a href="/contact">Contact me</a> about...</h2>
                 <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
                     <article id="post-<?php the_ID(); ?>">
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
@@ -52,7 +52,7 @@ get_header(); ?>
                                     }
                                 ?>
                                 <img src="<?php echo $img ?>" alt="<?php echo $alt ?>" />
-                                <h2 class="entry-title"><?php the_title(); ?></h2>
+                                <h3 class="entry-title"><?php the_title(); ?></h3>
                             </header><!-- .entry-hfeader -->
                         </a>
                     </article><!-- #post-## -->
