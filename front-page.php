@@ -36,6 +36,7 @@ get_header(); ?>
                     <article id="post-<?php the_ID(); ?>">
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                             <header class="entry-header">
+                                <img src="<?php echo $img ?>" alt="<?php echo $alt ?>" />
                                 <h2 class="entry-title">
                                     <?php
                                         if ( has_post_thumbnail() ) {
@@ -52,7 +53,6 @@ get_header(); ?>
                                                 $img = "https://dummyimage.com/300x300/$bgColor/$fgColor/&text=" . get_the_title();
                                         }
                                     ?>
-                                    <img src="<?php echo $img ?>" alt="<?php echo $alt ?>" />
                                     <?php the_title(); ?>
                                 </h2>
                         </header><!-- .entry-hfeader -->
