@@ -16,27 +16,21 @@
 		<div>
 			<ul>
 				<li>
-					<a href="https://twitter.com/werdnanoslen">
-						<img src="<?php bloginfo('template_url'); ?>/img/twitter.svg"
-								alt="twitter" title="twitter" />
-					</a>
-				</li>
-				<li>
 					<a href="https://www.linkedin.com/in/andrewdouglasnelson">
 						<img src="<?php bloginfo('template_url'); ?>/img/linkedin.svg"
-								alt="linkedin" title="linkedin" />
+								alt="linkedin" />
 					</a>
 				</li>
 				<li>
 					<a href="https://github.com/werdnanoslen">
 						<img src="<?php bloginfo('template_url'); ?>/img/github.svg"
-								alt="github" title="github" />
+								alt="github" />
 					</a>
 				</li>
 				<li>
 					<a href="<?php echo get_page_link(get_page_by_title('Contact &amp; Availability')->ID); ?>">
 						<img src="<?php bloginfo('template_url'); ?>/img/email.svg"
-								alt="email" title="email" />
+								alt="email" />
 					</a>
 				</li>
 			</ul>
