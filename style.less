@@ -946,6 +946,7 @@ body.home section#primary a {
 }
 body.home section#secondary h2 {
 	color: @grey;
+	font-weight: bold;
 	a {
 		font-size: inherit;
 		color: inherit;
@@ -1212,9 +1213,12 @@ iframe.twitter-timeline {
 	h2 {
 		font-size: @h2-font-size * 1.17;
 	}
-    h3 {
-        font-size: @h3-font-size * 1.09;
-    }
+	body.page:not(.home) h3 {
+		font-size: @h3-font-size * 1.09;
+	}
+	body.page.home h3 {
+		font-size: @h4-font-size;
+	}
 	#masthead, body.home .hero-image, .site-main, #colophon {
 		width: @12cols;
 	}
