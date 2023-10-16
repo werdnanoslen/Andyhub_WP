@@ -37,7 +37,6 @@ get_header(); ?>
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                             <header class="entry-header">
                                 <h2 class="entry-title">
-                                    <a href="<?php the_permalink(); ?>" rel="bookmark">
                                     <?php
                                         if ( has_post_thumbnail() ) {
                                                 $img = get_the_post_thumbnail_url(get_the_ID(), 'medium');
@@ -55,8 +54,7 @@ get_header(); ?>
                                     ?>
                                     <img src="<?php echo $img ?>" alt="<?php echo $alt ?>" />
                                     <?php the_title(); ?>
-                                </a>
-                            </h2>
+                                </h2>
                         </header><!-- .entry-hfeader -->
                     </article><!-- #post-## -->
                 <?php endforeach;
