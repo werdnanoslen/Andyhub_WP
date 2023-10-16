@@ -935,14 +935,18 @@ body.home section#secondary article {
 	margin-bottom: @gutter/@em;
 	position: relative;
 	overflow: hidden;
-    text-align: center;
+	text-align: center;
 }
 body.home section h1 {
 	display: block;
 	color: @grey;
 }
-body.home section a {
+body.home section#primary a {
 	color: @white;
+}
+body.home section#secondary h1 a {
+	font-size: inherit;
+	color: inherit;
 }
 body.home article img {
 	max-height: 100%;
