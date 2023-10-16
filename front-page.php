@@ -25,12 +25,10 @@ get_header(); ?>
         <main class="site-main" role="main">
             <?php
                 $args = array(
-                    'category_name'    => 'Featured',
-                    'post_status'      => 'publish',
-                    'posts_per_page'   => -1,
-                    'suppress_filters' => true
+                    'meta_key' => '_wp_page_template',
+                    'meta_value' => 'wide-page.php'
                 );
-                $posts_array = get_posts($args);
+                $posts_array = get_pages($args); 
                 if (count($posts_array) > 0) :
             ?>
                 <h1><a href="/contact">Contact me</a> about...</h1>
