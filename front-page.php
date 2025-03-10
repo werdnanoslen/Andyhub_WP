@@ -9,29 +9,34 @@ get_header(); ?>
     <?php if ( header_image() ) : ?>
         <img src="<?php header_image();?>" class="hero-image" />
     <?php endif; ?>
-
-    <section id="primary" class="content-area">
-        <main class="site-main" role="main">
+    <main class="site-main">
+        <section id="primary" class="content-area">
             <?php
                 while (have_posts()) {
                     the_post();
                     get_template_part('content', 'page');
                 }
             ?>
-        </main>
-    </section>
+        </section>
 
-    <section id="secondary" class="content-area">
-        <main class="site-main" role="main">
+        <section id="secondary" class="content-area">
             <?php
                 $args = array(
                     'meta_key' => '_wp_page_template',
-                    'meta_value' => 'wide-page.php'
+                    'meta_value' => 'wide-page.php',
+                    'sort_column' => 'menu_order'
                 );
                 $posts_array = get_pages($args); 
                 if (count($posts_array) > 0) :
             ?>
-                <h2><a href="/contact">Contact me</a> about...</h2>
+                <h2>
+                    <img 
+                        class="inline-text-icon" 
+                        src="/wordpress/wp-content/uploads/arrow.svg" 
+                        alt=""
+                    />
+                    My specialties
+                </h2>
                 <?php foreach ( $posts_array as $post ) : setup_postdata( $post ); ?>
                     <article id="post-<?php the_ID(); ?>">
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
@@ -60,7 +65,7 @@ get_header(); ?>
                     wp_reset_postdata();
                 ?>
             <?php endif; ?>
-        </main><!-- #main -->
-    </section>
+        </section>
+    </main>
 
 <?php get_footer(); ?>
