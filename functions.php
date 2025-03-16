@@ -103,7 +103,7 @@ add_action( 'widgets_init', 'andyhub_wp_widgets_init' );
 function andyhub_wp_scripts() {
     $version = filemtime(get_stylesheet_directory() . '/style.css');
 	wp_enqueue_style( 'andyhub_wp-style', get_stylesheet_uri(), array(), $version );
-
+	wp_enqueue_style('dashicons');
 	wp_enqueue_script( 'andyhub_wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'andyhub_wp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );

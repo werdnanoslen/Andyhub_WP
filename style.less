@@ -1229,6 +1229,37 @@ body.single h3 {
 	font-weight: 700;
 }
 
+ul.icon-list {
+	list-style-type: none;
+	padding-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+
+	li {
+		padding: 0.5rem;
+		flex-basis: @3cols;
+		flex-grow: 1;
+		display: flex;
+		gap: 0.5rem;
+
+		&::before {
+			height: fit-content;
+			width: fit-content;
+			font-size: 1.25rem;
+			color: @red;
+			background-color: @red-lighter;
+			border-radius: 50%;
+			padding: 0.75rem;
+			line-height: 1.2;
+		}
+
+		&::marker {
+			content: none;
+		}
+	}
+}
+
 .page-links {
 	clear: both;
 	margin: 0 0 @h2-font-size;
