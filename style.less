@@ -740,6 +740,12 @@ article[class*="category-"],
 	width: 100%;
 }
 
+#masthead {
+	display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+}
 #masthead,
 .site-main {
 	padding: 0 @gutter/@em;
@@ -1386,6 +1392,10 @@ iframe.twitter-timeline {
 	Small layout
 */
 @media screen and (min-width: (@8cols + 2*@gutter/@em)) {
+	#masthead {
+		align-items: start;
+	}
+
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: none;
@@ -1435,6 +1445,7 @@ iframe.twitter-timeline {
 		margin-left: @1col;
 		text-align: right;
 		display: inline-block;
+		padding-bottom: 0.25rem;
 	}
 
 	.entry-content>aside {
@@ -1573,21 +1584,6 @@ iframe.twitter-timeline {
 	Widescreen layout
 */
 @media screen and (min-width: (@16cols + 3*@gutter/@em)) {
-
-	// #masthead,
-	// body.home .hero-image,
-	// .site-main,
-	// #colophon {
-	// 	width: @16cols;
-	// }
-
-	// .site-title {
-	// 	width: @8cols;
-	// }
-
-	// .main-navigation {
-	// 	width: @8cols;
-	// }
 
 	body.archive article,
 	body.archive article:nth-of-type(2n),
