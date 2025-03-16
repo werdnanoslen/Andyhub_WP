@@ -745,11 +745,10 @@ article[class*="category-"],
 	padding: 0 @gutter/@em;
 }
 
-#masthead .current-menu-item a {
-	border-bottom: 3px @red solid;
-	color: @red;
-	padding-bottom: 2px;
-	text-decoration: none;
+#masthead .current-menu-item:not(.site-title) a {
+	color: white;
+	text-decoration: underline;
+	background-color: @red-dark;
 }
 
 body.archive article {
@@ -888,26 +887,19 @@ a:hover {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	float: left;
-	left: 0;
-	position: absolute;
-	top: @h2-font-size;
-	z-index: 99999;
-}
+	width: 100%;
+	display: inherit;
+	margin-left: inherit;
+	
+	a {
+		font-weight: normal;
+		text-transform: initial;
 
-.main-navigation ul ul ul {
-	left: 100%;
-	top: 0;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-.main-navigation ul li:hover>ul {
-	display: block;
+		&:before {
+			content: "↪";
+			margin-right: 0.25rem;
+		}
+	}
 }
 
 /* Small menu */
@@ -1397,6 +1389,12 @@ iframe.twitter-timeline {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: none;
+
+		.current-menu-item a {
+			border-bottom: 3px @red solid;
+			color: @red;
+			text-decoration: none;
+		}
 	}
 
 	nav.toggled .menu-main-container {
@@ -1405,6 +1403,32 @@ iframe.twitter-timeline {
 
 	.main-navigation ul {
 		display: inline-block;
+		
+		li.menu-item-has-children ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			display: none;
+			float: left;
+			left: 0;
+			position: absolute;
+			top: @h2-font-size;
+			z-index: 99999;
+			width: auto;
+			margin-left: 0;
+			text-align: left;
+			gap: 0.5rem;
+			flex-direction: column;
+			padding: 0.5rem;
+			background-color: @red-lighter;
+
+			li {
+				margin-left: 0;
+				text-align: left;
+				width: max-content;
+			}
+		}
+		li.menu-item-has-children:hover ul {
+			display: flex;
+		}
 	}
 
 	.main-navigation li {
