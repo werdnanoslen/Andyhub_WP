@@ -52,7 +52,7 @@ and Blueprint http://www.blueprintcss.org/
 @middayblue: #72B7BC;
 @red-lighter: #fff2f0;
 @red: #db2403;
-@red-dark: #E12A09;
+@red-dark: #831805;
 @red-darker: #531004;
 
 @primary: @red;
@@ -573,28 +573,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid @lightgrey;
-	border-color: @lightgrey;
+	border: 1px solid @red-darker;
 	border-radius: 3px;
-	background: @lightestgrey;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
-	color: rgba(0, 0, 0, .8);
-	cursor: pointer;
-	/* Improves usability and consistency of cursor style between image-type 'input' and others */
+	background: @red-darker;
+	color: @white;
 	-webkit-appearance: button;
-	/* Corrects inability to style clickable 'input' types in iOS */
-	font-size: @h3-font-size;
-	line-height: 1;
-	padding: .6em 1em .4em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+	font-size: @body-font-size;
+	padding: 3px 0.5rem;
+	cursor: pointer;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: @lightgrey;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
+	border-color: @red-dark;
+	background-color: @red-dark;
 }
 
 button:focus,
@@ -925,6 +919,7 @@ a:hover {
 	box-shadow: none;
 	outline: none;
 	text-shadow: none;
+	background-color: unset;
 }
 
 .menu-toggle {

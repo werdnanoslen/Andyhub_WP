@@ -74,6 +74,8 @@ get_header(); ?>
 					if ( ! empty( $term_description ) ) :
 						printf( '<div class="taxonomy-description">%s</div>', $term_description );
 					endif;
+
+					get_search_form();
 				?>
 			</header><!-- .page-header -->
 

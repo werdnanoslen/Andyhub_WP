@@ -18,7 +18,7 @@ $hasCaseAttributes = (!!$excerpt_image | !!$client | !!$dates | !!$tags | !!$url
 	<?php if (!is_front_page()) : //Don't show title on Home page ?>
         <header class="entry-header">
             <h1 class="entry-title"><?php the_title(); ?></h1>
-            <h2><?php if($post->post_excerpt) echo get_the_excerpt(); ?></h2>
+            <?php if($post->post_excerpt):?><h2><?php echo get_the_excerpt(); ?></h2><?php endif;?>
         </header><!-- .entry-header -->
         <?php if ($img): ?>
             <div class="excerpt_image">
