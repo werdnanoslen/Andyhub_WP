@@ -1158,7 +1158,9 @@ body.home section#secondary article {
 	text-align: center;
 }
 
-body.home section h1 {
+body.home section h1,
+body.page article h1,
+body.single article h1 {
 	display: block;
 	margin-bottom: 2.75rem;
 	font-family: @header-fonts;
@@ -1281,7 +1283,7 @@ ul.icon-list {
 }
 
 .case-attributes table {
-	font-size: @small-font-size;
+	// font-size: @small-font-size;
 	color: @darkgrey;
 }
 
@@ -1555,9 +1557,12 @@ iframe.twitter-timeline {
 		margin-right: 0;
 	}
 
+	body.home section h1,
+	body.page article h1 {
+		font-size: 4rem;
+	}
 	body.home section h1 {
 		margin-bottom: 4rem;
-		font-size: 4rem;
 	}
 
 	body.home section#secondary article {
